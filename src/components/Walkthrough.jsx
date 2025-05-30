@@ -1,5 +1,5 @@
 import React from 'react'
-import ChatLandLord from '../assets/images/Chat Landlord.svg'
+import ChatLandLord from '../assets/images/chat-landlord.svg'
 import TrackRent from '../assets/images/Track Rent.svg'
 import SubmitMaintenance from '../assets/images/submit maintenance.svg'
 
