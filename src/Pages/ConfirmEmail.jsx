@@ -1,12 +1,12 @@
 import React from 'react'
-import './style.css' 
+// import './style.css' 
 import OtpVerification from '../components/OtpVerification';
 import { Link } from 'react-router-dom';
 
 function EmailConfirmation() {
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay">9
       <div className="modal-wrapper">
         <h1 className="confirm-header">CONFIRM YOUR EMAIL</h1>
 

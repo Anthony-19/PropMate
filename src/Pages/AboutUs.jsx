@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import '../Css/AboutUs.css';
+import '../Css/aboutUs.css';
 
 function AboutUs() {
 
