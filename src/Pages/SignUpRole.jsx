@@ -14,6 +14,10 @@ function RoleSelection() {
     navigate('/signup')
   };
 
+  const handleClick = () => {
+    navigate('/signin')
+  }
+
   return (
     <>
 
@@ -36,7 +40,7 @@ function RoleSelection() {
           </p>
 
           <a href="/signin" className="signin-link">
-            Have an account? <span>Sign in</span>
+            Have an account? <span onClick={handleClick}>Sign in</span>
           </a>
         </div>
       </main>
