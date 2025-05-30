@@ -1,6 +1,6 @@
 import React from 'react'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../Css/LandingPage.css'
+import '../Css/landingPage.css'
 import { Link } from 'react-router-dom';
 import VerificationSuccess from '../components/VerificationSuccess';
 
