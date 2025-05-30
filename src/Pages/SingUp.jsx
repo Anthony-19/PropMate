@@ -127,8 +127,8 @@ const Signup = () => {
       newErrors.email = 'Enter a valid email';
     }
 
-    if (formData.password.length <= 8) {
-      newErrors.password = 'Password must be exactly 8 characters';
+    if (formData.password.length < 8) {
+      newErrors.password = 'Password must be greater than 8 characters';
     }
 
     if (formData.password !== formData.confirmPassword) {

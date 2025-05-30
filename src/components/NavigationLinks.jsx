@@ -9,6 +9,13 @@ function NavigationLinks() {
       serviceSection.scrollIntoView({behavior: 'smooth'});
     }
   };
+
+  const contactScroll = () => {
+    const contactSection = document.getElementById('contact');
+    if(contactSection){
+      contactSection.scrollIntoView({behavior: 'smooth'});
+    }
+  }
   // console.log(serviceSection);
   return (
     <div className='navigation-container'>
@@ -18,7 +25,7 @@ function NavigationLinks() {
                 </li>
             <li className="services nav-item" onClick={handleScroll}>Services</li>
             <li className="about-us nav-item"><Link to="/aboutus">About Us</Link></li>
-            <li className="contact nav-item"><Link href="#">Contact</Link></li>
+            <li className="contact nav-item" onClick={contactScroll}><Link>Contact</Link></li>
           </ul>
     </div>
   )

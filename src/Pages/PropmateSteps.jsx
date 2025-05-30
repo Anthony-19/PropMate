@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { use } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import "../Css/propmateSteps.css"
 function PropmateSteps() {
-
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/signup-role')
+  }
   return (
     <>
       <main className="learn-more-card">
@@ -41,7 +45,7 @@ function PropmateSteps() {
             src="../Assets/Images/learn more image.jpg"
             alt="Professional man reading document"
           />
-          <button className="start-btn">Get Started</button>
+          <button className="start-btn" onClick={handleClick}>Get Started</button>
         </div>
       </main>
     </>

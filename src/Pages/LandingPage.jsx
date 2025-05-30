@@ -204,7 +204,7 @@ function LandingPage() {
                 <li><a href="#">Contact</a></li>
               </ul>
             </div>
-            <div className="footer-col">
+            <div className="footer-col" id='contact'>
               <div className="footer-col social">
                 <h4>Connect with us</h4>
                 <a href="#" className="whatsapp"><i className="fab fa-whatsapp"></i></a>

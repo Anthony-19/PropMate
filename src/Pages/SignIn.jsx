@@ -15,7 +15,7 @@ export default function SignIn(){
     const navigate = useNavigate()
     const text = (
         <>
-              Don’t have account? <Link to='/signup' className='signUp-text'>Sign Up</Link>
+              Don’t have account? <Link to='/signup-role' className='signUp-text'>Sign Up</Link>
         </>
       )
     const [flip, setFlip] = useState(true)
