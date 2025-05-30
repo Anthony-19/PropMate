@@ -39,7 +39,7 @@ function RoleSelection() {
              Access lease agreement, submit maintenance requests, stay connected with your landlord, get rent reminders and track your full payment history anytime.
           </p>
 
-          <a href="/signin" className="signin-link">
+          <a className="signin-link">
             Have an account? <span onClick={handleClick}>Sign in</span>
           </a>
         </div>
