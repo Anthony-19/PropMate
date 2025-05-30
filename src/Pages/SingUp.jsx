@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link} from 'react-router-dom';
-import '../Css/signup.css';
+import '../Css/signUp.css';
 import "../Css/confirmEmail.css";
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
