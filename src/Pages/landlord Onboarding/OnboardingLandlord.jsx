@@ -1,8 +1,13 @@
-import { useState,useNavigate } from 'react'
+import { useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import FormTitle from './FormTitle'
 import AccountSetupLL from './AccountSetupLL'
 import ProgressBar from './ProgressBar'
 import HeaderInvited from './HeaderInvited'
+import PropertyDetails from './PropertyDetails'
+import PropertyLocation from './PropertyLocation'
+import TermsAndConditions from './TermsAndConditions'
+import TenantManagement from './TenantManagement'
 
 import './Landlord.css'
 // import AccountSetupScreen from '../../components/AccountSetupScreen'
@@ -18,7 +23,7 @@ import SkipNow from '../../components/SkipNow'
 
     
 function OnboardingLandlord() {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const [steps, setSteps] = useState(1)
   
 
@@ -36,22 +41,18 @@ function OnboardingLandlord() {
   return (
      <div className="landlord-container">
       <ProgressBar steps={steps} />
-      <HeaderInvited />
+      <HeaderInvited />  
       <FormTitle steps={steps}/>
-      <AccountSetupLL />
-
-
-      {/* <ProgressBar steps = {props.steps}/> */}
-      {/* <HeaderInvited /> */}
-      {/* <FormTitle steps ={props.steps}/> */}
-      {/* {props.steps === 1 && <AccountSetupScreen />}
-      {props.steps === 2 && <LeaseAgreement />}
-      {props.steps === 3 && <Walkthrough />}  */}
+      {steps === 1 &&  <AccountSetupLL />}
+      {steps === 2 && <PropertyDetails />}
+      {steps === 3 && <PropertyLocation />}
+      {steps === 4 && <TermsAndConditions />}
+      {steps === 5 && <TenantManagement />}
       
       <InvitedBtn 
         handleClick = {handleClick}
         // onClick = {props.handleClick}
-        // steps = {props.steps}
+        steps = {steps}
       />
       <SkipNow />
       {/* <Footer /> */}
