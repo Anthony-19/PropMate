@@ -296,7 +296,7 @@ const Signup = () => {
         <h1 className="confirm-header">CONFIRM YOUR EMAIL</h1>
 
         <div className="modal">
-          <img src="/public/Assets/Images/securityicon.jpg" alt="Security Icon" className="security-image" />
+          <img src="/Assets/Images/securityicon.jpg" alt="Security Icon" className="security-image" />
 
           <p className="email-info">
             We’ve sent a code to <span id="user-email">{formData.email}</span>
