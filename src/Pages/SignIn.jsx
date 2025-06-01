@@ -86,7 +86,7 @@ export default function SignIn(){
             //    console.log(cleanedData);
 
             //    if(!validate()) return;
-            // navigate('/invited-tenant')
+            navigate('/invited-tenant')
             // navigate('/landlord-welcome')
 
                try{
