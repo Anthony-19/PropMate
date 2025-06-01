@@ -4,8 +4,9 @@ import { Link, useNavigate , useLocation} from 'react-router-dom'
 
 function ResetPassword() {
     const location = useLocation();
-    const email = location.state?.email || ''; // Get email from state or default to empty string
+    // const email = location.state?.email || ''; // Get email from state or default to empty string
 
+    const storedEmail= localStorage.getItem('email')
 
     const navigate = useNavigate();
     const [otpReset, setOtpReset] = React.useState('');
@@ -20,7 +21,7 @@ function ResetPassword() {
     e.preventDefault();
     if (otpReset.length !== 6) return;
     localStorage.setItem('otp', otpReset); // Store OTP in local storage
-    navigate('/create-new-password'); // Navigate to create new password page
+    navigate('/create-new-password', {state: otpReset}); // Navigate to create new password page
     }
   return (
     <div className='reset-password-page'>

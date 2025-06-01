@@ -87,7 +87,7 @@ export default function SignIn(){
 
             //    if(!validate()) return;
             // navigate('/invited-tenant')
-            navigate('/landlord-welcome')
+            // navigate('/landlord-welcome')
 
                try{
                 const response = await fetch('https://pms-bd.onrender.com/api/auth/login', {
@@ -95,20 +95,18 @@ export default function SignIn(){
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(cleanedData)
+                    body: JSON.stringify({email: cleanedData.email.trim(), password: cleanedData.password})
                 })
                 if(response.ok){
                     const data = await response.json()
                     if(data.role === 'landlord'){
-                        window.location.href = '/landlord-dashboard'; //Come back and change this later
+                        navigate('/landlord-welcome')
                     }
                   
                     else if(data.role === 'tenant'){
                         navigate('/invited-tenant')
                     }
 
-                //    console.log("Login successful", data);
-                //     navigate('/invited-tenant')
                 }
                 else{
                     setError({email: "Invalid email or password"})
@@ -116,7 +114,7 @@ export default function SignIn(){
                }
 
                catch(error) {
-                 setError("Something went wrong. Please try again.");
+                  setError({ email: "Something went wrong. Please try again." });
                }
     }
     

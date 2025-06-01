@@ -38,7 +38,9 @@ export default function ForgotPassword() {
         if(response.ok){
             const data = await response.json();
             console.log(data);
-            navigate('/reset-password' , {state: {email}});
+            localStorage.setItem('email', email)
+            navigate('/reset-password');
+            // navigate('/reset-password' , {state: {email}});
         }
         else{
             const errorData = await response.json();

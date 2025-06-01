@@ -7,15 +7,16 @@ import OtpVerification from '../components/OtpVerification';
 function CreateNewPassword() {
     const navigate = useNavigate();
     const location = useLocation();
-    const email = location.state?.email || ''; 
+    // const email = location.state?.email || ''; 
+    const storedEmail = localStorage.getItem('email')
     const otp = location.state?.otp || ''; 
     const [newPassword, setNewPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [message, setMessage] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
 
-    localStorage.setItem('email', email); // Store email in local storage
-    localStorage.setItem('otp', otp); // Store OTP in local storage
+    // localStorage.setItem('email', email); // Store email in local storage
+    const storedOtp = localStorage.getItem('otp'); // Store OTP in local storage
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -34,19 +35,21 @@ function CreateNewPassword() {
     if (newPassword === repeatPassword) {
         setIsSuccess(true);
         try {
-            const response = await fetch('https://pms-bd.onrender.com//api/auth/forgot-password', {
+            const response = await fetch('https://pms-bd.onrender.com/api/auth/forgot-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, otp, newPassword }),
+                body: JSON.stringify({ email: storedEmail, otp: storedOtp, newPassword }),
             });
 
             if (response.ok) {
                const data = await response.json();
-               alert('Password updated successfully');
-               if(data.role === 'landlord'){
-                window.location.href = '/landlord-dashboard'; //Come back and change this later
+               
+               if(data){
+                alert('Password updated successfully');
+                console.log(data)
+                // window.location.href = '/landlord-dashboard'; //Come back and change this later
                 navigate('/otp-verification');
                }
                else{
