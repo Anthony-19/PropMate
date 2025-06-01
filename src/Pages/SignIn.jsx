@@ -87,7 +87,7 @@ export default function SignIn(){
 
             //    if(!validate()) return;
             // navigate('/invited-tenant')
-            navigate('/landlord-welcome')
+            // navigate('/landlord-welcome')
 
                try{
                 const response = await fetch('https://pms-bd.onrender.com/api/auth/login', {

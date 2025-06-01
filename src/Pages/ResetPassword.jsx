@@ -28,7 +28,7 @@ function ResetPassword() {
       <img src="/public/Assets/Images/email-icon.svg" alt="email-icon" className='email-icon'/>
       <h2 className='reset-password-header'>Check your email</h2>
       <p className='reset-password-subheader'>We have sent an OTP to your email. <br /> Please check your inbox. </p>
-      <p className='timing'><small>This code will expire in <span>01:56s</span></small></p>
+      {/* <p className='timing'><small>This code will expire in <span>01:56s</span></small></p> */}
       <form action="" onSubmit={handleSubmit} className='reset-password-form'>
         <input type="text" 
         id='reset-otp-input'
