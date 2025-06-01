@@ -87,7 +87,7 @@ export default function SignIn(){
 
             //    if(!validate()) return;
             // navigate('/invited-tenant')
-            // navigate('/landlord-welcome')
+            navigate('/landlord-welcome')
 
                try{
                 const response = await fetch('https://pms-bd.onrender.com/api/auth/login', {
@@ -95,15 +95,20 @@ export default function SignIn(){
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({email: cleanedData.email.trim(), password: cleanedData.password})
+                    body: console.log(JSON.stringify({email: cleanedData.email, password: cleanedData.password}))
+                    
                 })
+
+                
                 if(response.ok){
+                    
                     const data = await response.json()
-                    if(data.role === 'landlord'){
+                     localStorage.setItem('token', data.token);
+                    if(data.user.role === 'landlord'){
                         navigate('/landlord-welcome')
                     }
                   
-                    else if(data.role === 'tenant'){
+                    else if(data.user.role === 'tenant'){
                         navigate('/invited-tenant')
                     }
 
@@ -125,7 +130,7 @@ export default function SignIn(){
             <p className="form-subheader">Sign into your  PropMate account to continue</p>
             <div className="email-phone-number">
                 <label htmlFor="email">Email/Phone Number</label>
-                <input type="text" id="email" name='email' placeholder="Enter your Email/Phone number"/>
+                <input type="text" id="email" name='email' placeholder="Enter your Email"/>
                 {error.email && <span className='error'>{error.email}</span>}
             </div>
             <div className="password">

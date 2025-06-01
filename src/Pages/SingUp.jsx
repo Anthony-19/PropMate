@@ -25,6 +25,7 @@ const Signup = () => {
     confirmPassword: '',
     // role: selectedRole,
     role: role,
+    phone: "",
     termsAccepted: false,
   });
   console.log('Form Data:', formData.role);
@@ -153,7 +154,12 @@ const Signup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: (JSON.stringify({name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
+          phone: formData.phone
+          }))
       });
 
       const data = await response.json();
@@ -174,6 +180,16 @@ const Signup = () => {
       setErrors({ submit: error });
     }
   };
+
+  const handleGoogle = async () => {
+     if (role) {
+    // Redirect user to backend endpoint which starts the OAuth flow
+    window.location.href = `https://pms-bd.onrender.com/api/auth/google?role=${role}`;
+  } else {
+    alert("Please select a role first.");
+   
+  }
+}
 
  
   return (
@@ -280,7 +296,7 @@ const Signup = () => {
               </div>
               <button type="submit" className="signup-btn" id='signup-btn'>Sign up</button>
               <div className="divider"><span className='divider-span'></span> <p>or</p> <span className='.divider-span'></span></div>
-              <button type="button" className="google-btn">
+              <button type="button" className="google-btn" onClick={handleGoogle}>
                 <img src="/public/Assets/Images/google-icon.svg" alt=""  id='google-icon'/>
                 Sign Up with Google
               </button>
