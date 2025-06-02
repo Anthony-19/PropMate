@@ -53,7 +53,7 @@ export default function SignIn(){
     }
 
     const [error, setError] = useState({})
-    const [formValue, setFormValue] = useState({})
+    const [formValue, setFormValue] = useState({});
 
     const formSubmit = async (e) => {
         // const rawData = Object.fromEntries(formData.entries())
@@ -86,7 +86,7 @@ export default function SignIn(){
             //    console.log(cleanedData);
 
             //    if(!validate()) return;
-            navigate('/invited-tenant')
+            // navigate('/invited-tenant')
             // navigate('/landlord-welcome')
 
                try{
@@ -95,7 +95,7 @@ export default function SignIn(){
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: console.log(JSON.stringify({email: cleanedData.email, password: cleanedData.password}))
+                    body: JSON.stringify({email: cleanedData.email, password: cleanedData.password})
                     
                 })
 
