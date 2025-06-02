@@ -21,7 +21,7 @@ function ResetPassword() {
     e.preventDefault();
     if (otpReset.length !== 6) return;
     localStorage.setItem('otp', otpReset); // Store OTP in local storage
-    navigate('/create-new-password', {state: otpReset}); // Navigate to create new password page
+    navigate('/create-new-password'); // Navigate to create new password page
     }
   return (
     <div className='reset-password-page'>

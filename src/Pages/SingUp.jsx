@@ -177,7 +177,9 @@ const Signup = () => {
     }
     catch (error) {
       console.error('Error submitting form:', error);
-      setErrors({ submit: error });
+        setErrors({ submit: error.message || 'User Already Exist' });
+      // setErrors({ submit: 'User Already Exist' });
+      // setErrors({ submit: error });
     }
   };
 
@@ -200,6 +202,7 @@ const Signup = () => {
         <main>
           <div className="card">
             <h2>Let's get you onboard. It's easy</h2>
+           {errors.submit && <p className="error-message">{errors.submit}</p>}
             <form className="signup-form" onSubmit={handleSubmit}>
               {/* Name */}
               <div className="input-group">
