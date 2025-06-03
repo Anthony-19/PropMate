@@ -66,6 +66,33 @@ const Signup = () => {
   //       return newOtp; 
   //     })
   // }
+const handleOtp = async() => {
+      const email = localStorage.getItem('email')
+      if(email) {
+        try {
+          const response = await fetch('https://pms-bd.onrender.com/api/auth/resend-otp', {
+            method: "POST",
+            headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({email})
+          })
+
+          if(response.ok){
+            setMessage('OTP resent successfully!');
+          }
+          else {
+        const data = await response.json();
+        setMessage(data.message || 'Failed to resend OTP');
+      }
+        } catch (error) {
+         setMessage('Something went wrong');
+        }
+      }
+    }
+
+
+
    const handleVerifyOtp = async (e) => {
       e.preventDefault();
       // const otps = otp.join(''); 
@@ -344,7 +371,7 @@ const Signup = () => {
           </p>
 
           <p className="resend">
-            Didn’t receive the OTP ? <Link to="/forgot-password">Resend</Link>
+            Didn’t receive the OTP ? <span onClick={handleOtp}>Resend</span>
           </p>
         </div>
       </div>

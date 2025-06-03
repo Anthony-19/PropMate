@@ -23,6 +23,31 @@ function ResetPassword() {
     localStorage.setItem('otp', otpReset); // Store OTP in local storage
     navigate('/create-new-password'); // Navigate to create new password page
     }
+
+    const handleOtp = async() => {
+      const email = localStorage.getItem('email')
+      if(email) {
+        try {
+          const response = await fetch('https://pms-bd.onrender.com/api/auth/resend-otp', {
+            method: "POST",
+            headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({email})
+          })
+
+          if(response.ok){
+            setMessage('OTP resent successfully!');
+          }
+          else {
+        const data = await response.json();
+        setMessage(data.message || 'Failed to resend OTP');
+      }
+        } catch (error) {
+         setMessage('Something went wrong');
+        }
+      }
+    }
   return (
     <div className='reset-password-page'>
       <img src="/public/Assets/Images/email-icon.svg" alt="email-icon" className='email-icon'/>
@@ -43,7 +68,7 @@ function ResetPassword() {
       </form>
          <button className='re-enter-password'><small><Link to='/forgot-password' className='re-enter-password-link'>Re-enter Email Address</Link></small></button>
 
-         <h3 className='didnt-get-email'>Didn’t receive the email ? <Link className='resend-btn' to="/forgot-password" type='submit'>Resend </Link></h3>
+         <h3 className='didnt-get-email'>Didn’t receive the email ? <span className='resend-btn' onClick={handleOtp} >Resend </span></h3>
     </div>
   )
 }

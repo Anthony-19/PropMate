@@ -18,6 +18,7 @@ import InvitedTenant from './Pages/InvitedTenant'
 import ProgressBar from './components/ProgressBar'
 import CompletedScreen from './components/CompletedScreen'
 import LandlordWelcome from './Pages/landlord Onboarding/LandlordWelcome'
+import GoogleAuthentication from './Pages/GoogleAuthentication'
 
 import './App.css'
 
@@ -108,6 +109,7 @@ const navigate = useNavigate()
           <Route path='/invited-tenant' element={<InvitedTenant steps={steps} handleClick={handleClick} />} />
           <Route path='/completed-screen' element={<CompletedScreen />} />
           <Route path='/landlord-welcome/*' element={<LandlordWelcome />} />
+          <Route path="/google/callback" element={<GoogleAuthentication />} />
         </Routes>
       <Footer />
     </div>
