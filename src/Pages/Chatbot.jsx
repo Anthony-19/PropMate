@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import Remi from '../../public/Assets/Images/smiling-customer-service-agent.jpg'
+import ChatIcon from '../../public/Assets/Images/chat-icon.png'
 import '../Css/chatbot.css'
 
 function Chatbot() {
@@ -76,7 +78,7 @@ function Chatbot() {
       {showChatbot && <div id="chatbot-container">
           <div className="chatbot-header">
             <div className="chatbot-header-left">
-              <img src="/Assets/Images/smiling-customer-service-agent.jpg" alt="Remi Avatar" />
+              <img src={Remi} alt="Remi Avatar" />
               <div className="chatbot-header-text">
                 <h1>Remi (PROPMATE Chat Assistant)</h1>
                 <p>Online</p>
@@ -99,7 +101,7 @@ function Chatbot() {
             <button onClick={sendMessage}>Send</button>
           </div>
       </div>}
-      <img src="/public/Assets/Images/chat-icon.png" alt="chatbot-chat-icon" onClick={toggleVisibilty} className='chatbot-chat-icon' />
+      <img src={ChatIcon} alt="chatbot-chat-icon" onClick={toggleVisibilty} className='chatbot-chat-icon' />
     </section>
    
   )
