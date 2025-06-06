@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import Remi from '../../public/Assets/Images/smiling-customer-service-agent.jpg'
-import ChatIcon from '../../public/Assets/Images/chat-icon.png'
+import Remi from '/Assets/Images/smiling-customer-service-agent.jpg'
+import ChatIcon from '/Assets/Images/chat-icon.png'
 import '../Css/chatbot.css'
 
 function Chatbot() {
