@@ -19,6 +19,7 @@ import ProgressBar from './components/ProgressBar'
 import CompletedScreen from './components/CompletedScreen'
 import LandlordWelcome from './Pages/landlord Onboarding/LandlordWelcome'
 import GoogleAuthentication from './Pages/GoogleAuthentication'
+import Chatbot from './Pages/Chatbot'
 
 import './App.css'
 
@@ -111,6 +112,7 @@ const navigate = useNavigate()
           <Route path='/landlord-welcome/*' element={<LandlordWelcome />} />
           <Route path="/google/callback" element={<GoogleAuthentication />} />
         </Routes>
+        <Chatbot />
       <Footer />
     </div>
   )
