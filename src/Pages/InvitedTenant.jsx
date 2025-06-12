@@ -18,8 +18,10 @@ function InvitedTenant(props) {
 
 
       <div className="invited-tenant-container">
-      {/* <ProgressBar steps = {props.steps}/> */}
+      {/* {location.pathname === '/invited-tenant' && <HeaderInvited />}
+      <ProgressBar steps = {props.steps}/> */}
       {/* <HeaderInvited /> */}
+     
       <FormTitle steps ={props.steps}/>
       {props.steps === 1 && <AccountSetupScreen />}
       {props.steps === 2 && <LeaseAgreement />}

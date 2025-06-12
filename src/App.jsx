@@ -20,19 +20,20 @@ import CompletedScreen from './components/CompletedScreen'
 import LandlordWelcome from './Pages/landlord Onboarding/LandlordWelcome'
 import GoogleAuthentication from './Pages/GoogleAuthentication'
 import Chatbot from './Pages/Chatbot'
+import HeaderInvited from './components/HeaderInvited'
+import TenantDashboard from './Pages/tenant dashboard/TenantDashboard'
 
 import './App.css'
 
 function App() {
   const location = useLocation();
   console.log(location)
-  const isSignIn = location.pathname === '/signin' ? 'App signin-background' : 'App';
+  const isSignIn = location.pathname === '/signin' ? 'App signin-background' : location.pathname === '/tenant-dashboard' ? 'App tenant-dashboards' : 'App';
   const style = {
-    width: location.pathname === '/' ? '100%' : '',
-    maxWidth: location.pathname === '/' ? '100%' : '',
-    padding: location.pathname === '/' ? '0rem' : location.pathname === '/aboutus' ? '1rem' : '',
-    borderRadius: location.pathname === '/' ? '0.5rem' : ''
-  
+    width: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' : '',
+    maxWidth: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' :  '',
+    padding: location.pathname === '/' ? '0rem' : location.pathname === '/aboutus' ? '1rem' : location.pathname === '/tenant-dashboard' ? '0rem' : '',
+    borderRadius: location.pathname === '/' ? '0.5rem' : '',
   }
 
   //   const HeaderStyle = {
@@ -43,7 +44,8 @@ function App() {
   '/invited-tenant',
   '/completed-screen',
   '/landlord-welcome',
-  'landlord-welcome/*'
+  'landlord-welcome/*',
+  '/tenant-dashboard'
 ]
 
 // const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname)
@@ -93,6 +95,7 @@ const navigate = useNavigate()
     // </div>
     <div className={isSignIn} style={style}>
       {location.pathname === '/invited-tenant' && <ProgressBar steps={steps}/>}
+      {location.pathname === '/invited-tenant' && <HeaderInvited steps={steps}/>}
       {/* <Header style={HeaderStyle}/> */}
       {shouldShowHeader && <Header />}
 
@@ -111,9 +114,10 @@ const navigate = useNavigate()
           <Route path='/completed-screen' element={<CompletedScreen />} />
           <Route path='/landlord-welcome/*' element={<LandlordWelcome />} />
           <Route path="/google/callback" element={<GoogleAuthentication />} />
+          <Route path="/tenant-dashboard" element={<TenantDashboard />} />
         </Routes>
         <Chatbot />
-      <Footer />
+      {location.pathname !== '/tenant-dashboard' && <Footer />}
     </div>
   )
 }

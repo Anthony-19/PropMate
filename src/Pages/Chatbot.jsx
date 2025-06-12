@@ -26,35 +26,36 @@ function Chatbot() {
 
     // uncomment this once we have the endpoint
 
-    // if(userInput){
-    //     try {
-    //         const response = await fetch('http://localhost:5000/api/chat', {
-    //               method:'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify({input: userInput})
-    //         })
+    if(userInput){
+        try {
+            const response = await fetch('https://pms-bot-byg9.onrender.com/chatbot/ask', {
+                  method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({question: userInput})
+            })
 
-    //         if(response.ok){
-    //             const res = await response.json()
-    //             setMessages(prev =>  (
-    //                 [...prev, {
-    //                     text: res.message,
-    //                     from: "bot"
-    //                 }]
-    //             ))
-    //         }
-    //     } catch (error) {
-    //         console.log(error)
-    //         setMessages((prev) => ([
-    //             ...prev, {
-    //                 userInput: res.message,
-    //                 user:"bot"
-    //             }
-    //         ]))
-    //     }
-    // }
+            if(response.ok){
+                const res = await response.json()
+                console.log(res)
+                setMessages(prev =>  (
+                    [...prev, {
+                         text: res.response,
+                        from: "bot"
+                    }]
+                ))
+            }
+        } catch (error) {
+            console.log(error)
+            setMessages((prev) => ([
+                ...prev, {
+                    text: error.message,
+                    user:"bot"
+                }
+            ]))
+        }
+    }
 
 
     setUserInput('');
