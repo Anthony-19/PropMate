@@ -20,9 +20,9 @@ function Chatbot() {
       { text: userInput, from: 'user' }
     ]);
 
-      setTimeout(() => {
-      setMessages(prev => [...prev, { text: `You said: "${userInput}"`, from: 'bot' }]);
-    }, 1000);
+    //   setTimeout(() => {
+    //   setMessages(prev => [...prev, { text: `You said: "${userInput}"`, from: 'bot' }]);
+    // }, 1000);
 
     // uncomment this once we have the endpoint
 
