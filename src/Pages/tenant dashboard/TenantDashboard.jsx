@@ -4,7 +4,7 @@ import './tenantDashboard.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Sidebar from './Sidebar';
 import DashboardScreen from './DashboardScreen';
-import ChatBotSupport from './chatBotSupport';
+import ChatBotSupport from './ChatBotSupport';
 import Footer from './Footer';
 
 const TenantDashboard = () => {
