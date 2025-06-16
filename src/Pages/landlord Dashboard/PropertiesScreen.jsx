@@ -11,6 +11,8 @@ import overdueIcon from '../../assets/images/overdue-payment-icon.svg'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function PropertiesScreen() {
+
+
   const properties = [
     {
       img: house1Image,

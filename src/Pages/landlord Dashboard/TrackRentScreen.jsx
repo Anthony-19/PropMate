@@ -11,11 +11,14 @@ function TrackRentScreen() {
   else{
     text = "Explore information and activity about your property"
   }
+
+    const userName = localStorage.getItem('userName');
+  // const role = localStorage.getItem('role');
   return (
     <>
       <section className="dashboard-intro">
               <div className='track-rent-container'>
-                <h3 className='track-rent-name'>Hello, John!</h3>
+                <h3 className='track-rent-name'>Hello, {userName}!</h3>
                 <p className="track-rent-text">{text}</p>
               </div>
               <div className='track-rent-left'>
