@@ -14,7 +14,10 @@ function Sidebar(props) {
     //     setShow(prev => !prev)
     // }
 
-    // const navLink = NavLink()
+
+
+      const userName = localStorage.getItem('userName');
+      const role = localStorage.getItem('role');
   
   return (
     <>
@@ -68,8 +71,8 @@ function Sidebar(props) {
                 <img src="../Assets/Images/blessing.jpeg" alt="Profile" id="profile-pic" className="rounded-circle mb-2" />
               </label>
               {/* <input type="file" id="profile-upload" accept="image/*" /> */}
-              <h6 className="mb-0 sidebar-user-name">Blessing</h6>
-              <h6 className="sidebar-user-name">Tenant</h6>
+              <h6 className="mb-0 sidebar-user-name">{userName}</h6>
+              <h6 className="sidebar-user-name">{role}</h6>
             </div>
             <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn">
               <span> Log out</span><i className="fas fa-sign-out"></i>
@@ -130,8 +133,8 @@ function Sidebar(props) {
                 <img src="../Assets/Images/blessing.jpeg" alt="Profile" id="profile-pic" className="rounded-circle mb-2" />
               </label>
               {/* <input type="file" id="profile-upload" accept="image/*" /> */}
-              <h6 className="mb-0 sidebar-user-name">Blessing</h6>
-              <h6 className="sidebar-user-name">Tenant</h6>
+              <h6 className="mb-0 sidebar-user-name">{userName}</h6>
+              <h6 className="sidebar-user-name">{role}</h6>
             </div>
             <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn s-l-btn" >
               {/* <span> Log out</span> */}

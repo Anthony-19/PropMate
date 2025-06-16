@@ -104,6 +104,8 @@ export default function SignIn(){
                     
                     const data = await response.json()
                      localStorage.setItem('token', data.token);
+                     localStorage.setItem('userName', data.user.name)
+                     localStorage.setItem('role', data.user.role)
                     if(data.user.role === 'landlord'){
                         navigate('/landlord-welcome')
                     }
