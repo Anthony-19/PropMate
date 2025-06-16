@@ -22,6 +22,9 @@ import GoogleAuthentication from './Pages/GoogleAuthentication'
 import Chatbot from './Pages/Chatbot'
 import HeaderInvited from './components/HeaderInvited'
 import TenantDashboard from './Pages/tenant dashboard/TenantDashboard'
+import LandLordDashboard from './Pages/landlord Dashboard/LandLordDashboard'
+import PropertiesScreen from './Pages/landlord Dashboard/PropertiesScreen'
+import DashboardScreen from './Pages/landlord Dashboard/DashboardScreen'
 
 import './App.css'
 
@@ -30,9 +33,9 @@ function App() {
   console.log(location)
   const isSignIn = location.pathname === '/signin' ? 'App signin-background' : location.pathname === '/tenant-dashboard' ? 'App tenant-dashboards' : 'App';
   const style = {
-    width: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' : '',
-    maxWidth: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' :  '',
-    padding: location.pathname === '/' ? '0rem' : location.pathname === '/aboutus' ? '1rem' : location.pathname === '/tenant-dashboard' ? '0rem' : '',
+    width: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' : location.pathname === '/landlord-dashboard' ? '100%' :'',
+    maxWidth: location.pathname === '/' ? '100%' : location.pathname === '/tenant-dashboard' ? '100%' : location.pathname === '/landlord-dashboard' ? '100%' :  '',
+    padding: location.pathname === '/' ? '0rem' : location.pathname === '/aboutus' ? '1rem' : location.pathname === '/tenant-dashboard' ? '0rem' : location.pathname.includes('/landlord-dashboard') ? '0rem' :'',
     borderRadius: location.pathname === '/' ? '0.5rem' : '',
   }
 
@@ -45,7 +48,8 @@ function App() {
   '/completed-screen',
   '/landlord-welcome',
   'landlord-welcome/*',
-  '/tenant-dashboard'
+  '/tenant-dashboard',
+  '/landlord-dashboard'
 ]
 
 // const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname)
@@ -115,6 +119,11 @@ const navigate = useNavigate()
           <Route path='/landlord-welcome/*' element={<LandlordWelcome />} />
           <Route path="/google/callback" element={<GoogleAuthentication />} />
           <Route path="/tenant-dashboard" element={<TenantDashboard />} />
+          <Route path="/landlord-dashboard" element={<LandLordDashboard />}>
+            <Route index element={<DashboardScreen />} />
+            <Route path='properties' element={<PropertiesScreen />} />
+          </Route>
+         
         </Routes>
         <Chatbot />
       {location.pathname !== '/tenant-dashboard' && <Footer />}

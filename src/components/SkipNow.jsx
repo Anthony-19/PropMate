@@ -1,11 +1,18 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 function SkipNow() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = () => {
-    navigate('/tenant-dashboard')
+    if (location.pathname.startsWith("/landlord-welcome")){
+       navigate('/landlord-dashboard')
+     
+    }
+   else if(location.pathname ===  "/invited-tenant"){
+     navigate('/tenant-dashboard')
+   }
   }
   return (
     <div className='skip-now-container'>

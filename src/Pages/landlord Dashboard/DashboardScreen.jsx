@@ -1,4 +1,5 @@
 import React from 'react'
+import { useOutletContext } from 'react-router-dom'
 
 import NotificationIcon from '../../assets/images/notification-icon.svg'
 import MessagesIcon from '../../assets/images/messages-badge-icon.svg'
@@ -9,17 +10,21 @@ import messageIcon from '../../assets/images/messages-badge-icon.svg'
 import maintenanceIcon from '../../assets/images/maintenance-icon.svg'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-function DashboardScreen(props) {
+function DashboardScreen() {
+
+  const {show, handleShow} = useOutletContext();
 
   return (
-    <div className="dashboard-content-container">
+    <>
+   
+    {/* <div className="dashboard-content-container"> */}
       {/* Top Bar */}
-      <HeaderDashboard 
-        show = {props.show}
-        handleShow = {props.handleShow}
-      />
+      {/* <HeaderDashboard 
+        show = {show}
+        handleShow = {handleShow}
+      /> */}
 
-      <TrackRentScreen />
+      {/* <TrackRentScreen /> */}
 
       {/* Summary Cards */}
       <div className="dashbord-summary-card-container">
@@ -222,7 +227,8 @@ function DashboardScreen(props) {
           </div>
         </div>
       </section>
-    </div>
+    {/* </div> */}
+     </>
   );
 };
 

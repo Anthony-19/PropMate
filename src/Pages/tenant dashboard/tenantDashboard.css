@@ -220,11 +220,116 @@
     cursor: pointer;
   }
 
+/* Dashboard screens */
+
+.dashboard-intro{
+  display: flex;
+  justify-content: space-between;
+}
+.track-rent-left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100%;
+  max-width: 32%; */
+}
+.track-rent-name{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #201F23;
+}
+.track-rent-text{
+   color: #201F23;
+   font-size: 0.8rem;
+}
+.track-rent-left .btn-request {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+   background-color: #174EA6;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.track-rent-left .btn-request i{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.track-rent-left .message-icon,
+.track-rent-left .notification-icon{
+  width: 100%;
+  max-width: 2rem;
+  background-color: #D4AF3726;
+  padding: 0.3rem;
+   border-radius: 50%; /* 👈 This makes it circular */
+  object-fit: cover; 
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.dashbord-summary-card-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.dashboard-summary-card{
+  border: 0.5px solid #174EA6;
+  outline: none;
+  padding: 1rem 1rem 0rem 1rem;
+  border-radius: 1rem;
+  background-color: #FDFCFA;
+  color: #201F23;
+  width: 100%;
+  max-width: 13rem;
+  height: 100%;
+  min-height: 5rem;
+}
+
+.dashbord-rent-status-title,
+.dashbord-current-rent-title,
+.dashbord-maintenance-request-title,
+.dashboard-message-icon-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+
+}
+.rent-status-icon,
+.dashboard-maintenance-icon,
+.dashboard-message-icon {
+  width: 2rem;            
+  height: 2rem;
+  object-fit: contain;     
+  background-color: #EEF4FE;
+  border-radius: 50%;     
+  padding: 0.5rem;    
+}
+
+.dashboard-summary-card .text-success{
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.dashboard-summary-card p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #606060;
+}
 
 
-
-
-
+/* 
   .maintenance {
     padding: 2rem;
     background-color: #fff;
@@ -251,18 +356,7 @@
     align-items: center;
     gap: 1rem;
   }
-  .btn-request {
-    background-color: #174EA6;
-    color: white;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+
   .bell-icon,
   .user-icon {
     font-size: 1.1rem;
@@ -324,7 +418,7 @@
   }
   .status.resolved {
     color: #27ae60;
-  }
+  } */
 
   /* Details Popup */
 .details-popup {
