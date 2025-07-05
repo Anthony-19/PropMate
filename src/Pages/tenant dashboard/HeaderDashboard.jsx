@@ -1,8 +1,18 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import HamburgerIcon from '../../assets/images/dashbord-hamburger-icon.svg'
 function HeaderDashboard(props) {
-
-    
+  const location = useLocation();
+  let text = null;
+  if (location.pathname.includes('maintenance-tenant-screen')) {  
+    text = "Maintenance Requests";
+   }
+   else if (location.pathname.includes('track')) {
+    text = "Maintenance Requests";
+   }
+   else{
+    text = "Dashboard";
+   }
   return (
     <>
       <div className="dashboard-title-container">
@@ -12,7 +22,7 @@ function HeaderDashboard(props) {
           className="hamburger-icon"
           alt="hamburger-icon"
         />}
-        <h5 className="dashboard-title">Dashboard</h5>
+        <h5 className="dashboard-title">{text}</h5>
       </div>
     </>
   );

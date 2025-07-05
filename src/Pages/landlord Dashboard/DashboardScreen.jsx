@@ -13,6 +13,7 @@ import propertyIcon from "../../assets/images/property-icon.svg";
 import rentalIncome from "../../assets/images/rental-income-icon.svg";
 import overDuePaymentIcon from "../../assets/images/overdue-payment-icon.svg";
 
+
 import house1Image from "../../assets/images/house1.png";
 import house2Image from "../../assets/images/house2.png";
 import house3Image from "../../assets/images/house3.png";

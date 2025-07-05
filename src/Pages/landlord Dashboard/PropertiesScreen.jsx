@@ -91,7 +91,7 @@ function PropertiesScreen() {
                 icon: rentStatusIcon,
                 title: "Upcoming Payment",
                 value: "₦1,250,000",
-              },
+              }
             ].map((card, i) => (
               <div
                 key={i}

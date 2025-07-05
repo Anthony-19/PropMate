@@ -1,11 +1,19 @@
 
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import dashboardIcon from '../../assets/images/dashboard-icon.svg'
 import maintenanceIcon from '../../assets/images/maintenance-icon.svg'
 import paymentIcon from '../../assets/images/payment-icon.svg'
 import leaseIcon from '../../assets/images/lease-icon.svg'
 import settingIcon from '../../assets/images/setting-icon.svg'
+
+import dashboardIconActive from '../../assets/images/dashboard-icon-active.svg'
+import maintenanceIconActive from '../../assets/images/maintenance-icon-active.svg'
+import paymentIconActive from '../../assets/images/payment-icon-active.svg'
+import leaseIconActive from '../../assets/images/lease-icon-active.svg'
+import settingIconActive from '../../assets/images/setting-icon-active.svg'
+
 
 function Sidebar(props) {
     // const [show, setShow] = useState(false)
@@ -15,9 +23,10 @@ function Sidebar(props) {
 
   const userName = localStorage.getItem('userName');
   const role = localStorage.getItem('role');
+   
+
   return (
     <>
- 
        {props.show === false ? <nav id="sidebar" className="sidebar expanded">
           <div className="sidebar-header">
             <h4 className="sidebar-brand">PropMate</h4>
@@ -27,30 +36,61 @@ function Sidebar(props) {
           </div>
 
           <ul className="sidebar-nav" style={{marginTop: '2rem'}}>
-            <li className="sidebar-nav-item active">
-              <a className="sidebar-nav-link active" href="#">
-                <img src={dashboardIcon} className="dashboard-icon" alt='dashboard-icon'/>
-                <span>Dashboard</span></a>
+            <li className="sidebar-nav-item">
+              <NavLink to="/tenant-dashboard" className={({isActive, isPending}) => (
+                `sidebar-nav-link ${isActive ? "active" : ""}`
+                )} end>
+               {({isActive, isPending}) => ( 
+                    <> 
+                     <img src={isActive ? dashboardIcon : dashboardIconActive} className="dashboard-icon" alt='dashboard-icon'/>
+                     <span>Dashboard</span>
+                     </>
+                  
+               )
+                 
+                }
+              </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <a className="sidebar-nav-link" href="../pages/maintenance_tenant_.html">
-              <img src={maintenanceIcon} className="maintenance-icon" alt='maintenance-icon' />
-              <span>Maintenance Request</span></a>
+              <NavLink className="sidebar-nav-link" to="maintenance-tenant-screen" ends>
+               {({isActive, isPending}) => ( 
+                    <> 
+                     <img src={isActive ? maintenanceIconActive :maintenanceIcon} className="maintenance-icon" alt='maintenance-icon'/>
+                     <span>Maintenance Request</span>
+                     </>
+               )            
+                } 
+              </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_payment.html">
-              <img src={paymentIcon} className="payment-icon" alt='payment-icon' />
-              <span>Payments</span></a>
+              <NavLink className="sidebar-nav-link" to="tenant-dashboard" ends>
+              {({isActive}) => (
+                <>
+              <img src={isActive ? paymentIconActive : paymentIcon} className="payment-icon" alt='payment-icon' />
+              <span>Payments</span>
+              </>
+              )}
+              </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_lease.html">
-             <img src={leaseIcon} className="lease-icon" alt='lease-icon' />
-              <span>Lease</span></a>
+              <NavLink className="sidebar-nav-link" to="../pages/tenant_lease.html">
+              {({isActive}) => (
+                <> 
+              <img src={isActive ? leaseIconActive : leaseIcon} className="lease-icon" alt='lease-icon' />
+              <span>Lease</span>
+                 </>
+              )}
+              </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_settings.html">
-              <img src={settingIcon} className="settings-icon" alt='setting-icon' />
-              <span>Settings</span></a>
+              <NavLink className="sidebar-nav-link" to="../pages/tenant_settings.html">
+              {({isActive}) => (
+                <>
+               <img src={isActive ? settingIconActive : settingIcon} className="settings-icon" alt='setting-icon' />
+               <span>Settings</span>
+               </>
+              )}
+              </NavLink>
             </li>
           </ul>
 
@@ -77,35 +117,65 @@ function Sidebar(props) {
           </div>
 
           <ul className="sidebar-nav" style={{marginTop: '2rem'}}>
-            <li className="sidebar-nav-item s-nav-item active">
-              <a className="sidebar-nav-link active" href="#">
-                <img src={dashboardIcon} className="dashboard-icon" alt='dashboard-icon' title='dashboard'/>
+            <li className="sidebar-nav-item s-nav-item">
+              <NavLink to="/tenant-dashboard" className={({isActive, isPending}) => (
+                `sidebar-nav-link ${isActive ? "active" : ""}`
+                )} end>
+               {({isActive, isPending}) => ( 
+                    <> 
+                     <img src={isActive ? dashboardIcon : dashboardIconActive} className="dashboard-icon" alt='dashboard-icon' title='dashboard'/>
+                  
+                     </>
+                  
+               )
+                 
+                }
+
+                {/* <img src={dashboardIcon} className="dashboard-icon" alt='dashboard-icon' title='dashboard'/> */}
                 {/* <span>Dashboard</span> */}
-                </a>
+                </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <a className="sidebar-nav-link" href="../pages/maintenance_tenant_.html">
-              <img src={maintenanceIcon} className="maintenance-icon" alt='maintenance-icon' title='Request Maintenance' />
-              {/* <span>Maintenance Request</span> */}
-              </a>
+              <NavLink className="sidebar-nav-link" to="maintenance-tenant-screen">
+                {({isActive, isPending}) => ( 
+                    <> 
+                     <img src={isActive ? maintenanceIconActive :maintenanceIcon} className="maintenance-icon" alt='maintenance-icon' title='Request Maintenance'/>
+                  
+                     </>
+               )            
+                } 
+             
+              </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_payment.html">
-              <img src={paymentIcon} className="payment-icon" alt='payment-icon' title='payment'/>
-              {/* <span>Payments</span> */}
-              </a>
+              <NavLink className="sidebar-nav-link" to="../pages/tenant_payment.html">
+              {({isActive}) => (
+                <>
+              <img src={isActive ? paymentIconActive : paymentIcon} className="payment-icon" alt='payment-icon' title='payment'/>
+              
+              </>
+              )}
+      
+              </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_lease.html">
-             <img src={leaseIcon} className="lease-icon" alt='lease-icon' title='Lease'/>
-              {/* <span>Lease</span> */}
-              </a>
+              <NavLink className="sidebar-nav-link" to="../pages/tenant_lease.html">
+              {({isActive}) => (
+                <> 
+              <img src={isActive ? leaseIconActive : leaseIcon} className="lease-icon" alt='lease-icon' title='Lease'/>
+                 </>
+              )}
+              </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <a className="sidebar-nav-link" href="../pages/tenant_settings.html">
-              <img src={settingIcon} className="settings-icon" alt='setting-icon' title='Settings' />
-              {/* <span>Settings</span> */}
-              </a>
+              <NavLink className="sidebar-nav-link" to="../pages/tenant_settings.html">
+                {({isActive}) => (
+                <>
+               <img src={isActive ? settingIconActive : settingIcon} className="settings-icon" alt='setting-icon' title='Settings' />
+              
+               </>
+              )}
+              </NavLink>
             </li>
           </ul>
 
