@@ -63,7 +63,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <NavLink className="sidebar-nav-link" to="tenant-dashboard" ends>
+              <NavLink className="sidebar-nav-link" to="payment-tenant-screen" ends>
               {({isActive}) => (
                 <>
               <img src={isActive ? paymentIconActive : paymentIcon} className="payment-icon" alt='payment-icon' />
@@ -148,7 +148,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <NavLink className="sidebar-nav-link" to="../pages/tenant_payment.html">
+              <NavLink className="sidebar-nav-link" to="payment-tenant-screen">
               {({isActive}) => (
                 <>
               <img src={isActive ? paymentIconActive : paymentIcon} className="payment-icon" alt='payment-icon' title='payment'/>

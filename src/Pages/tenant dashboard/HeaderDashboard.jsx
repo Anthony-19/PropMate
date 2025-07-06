@@ -7,7 +7,10 @@ function HeaderDashboard(props) {
   if (location.pathname.includes('maintenance-tenant-screen')) {  
     text = "Maintenance Requests";
    }
-   else if (location.pathname.includes('track')) {
+   else if (location.pathname.includes('payment-tenant-screen')) {
+    text = "Payment";
+   }
+    else if (location.pathname.includes('')) {
     text = "Maintenance Requests";
    }
    else{

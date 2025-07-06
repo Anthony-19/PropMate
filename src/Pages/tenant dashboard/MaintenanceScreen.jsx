@@ -7,24 +7,7 @@ const MaintenanceSection = () => {
       <TrackRentScreen />
       <section className="maintenance-section-tenant-container">
         <section className="maintenance-section-tenant">
-          {/* <div className="maintenance-header">
-          <div className="maintenance-text">
-            <h2>Maintenance Request</h2>
-            <p>Hello, Blessing!</p>
-            <p>Easily report and track maintenance issues, and communicate directly with your landlord.</p>
-          </div>
-          <div className="maintenance-actions">
-            <button className="btn-request" id="openRequestModal">
-              <i className="fas fa-plus"></i> New Maintenance Request
-            </button>
-            <button className="btn btn-light">
-              <i className="fas fa-envelope"></i>
-            </button>
-            <button className="btn btn-light">
-              <i className="far fa-bell"></i>
-            </button>
-          </div>
-        </div> */}
+       
 
           <div className="maintenance-content">
             <h3>Your Submitted Request</h3>

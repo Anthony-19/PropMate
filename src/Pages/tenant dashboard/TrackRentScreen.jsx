@@ -11,7 +11,10 @@ function TrackRentScreen() {
     text = 'Track your rent and maintenance requests';
   } else if (location.pathname.includes('/maintenance-tenant-screen')) {
     text = 'Easily report and track maintenance issues, and communicate directly with your landlord.';
-  } else {
+  } else if (location.pathname.includes('payment-tenant-screen')) {
+    text = 'Flat 2B, Admiralty Close, Ikoyi';
+  } 
+  else{
     text = 'Welcome to the dashboard';
   }
   return (
@@ -22,9 +25,9 @@ function TrackRentScreen() {
                 <p className="track-rent-text">{text}</p>
               </div>
               <div className='track-rent-left'>
-                <button className="btn-request" id="openRequestModal">
+               {!location.pathname.includes('payment-tenant-screen') && <button className="btn-request" id="openRequestModal">
                   <i className="fas fa-plus"></i> New Maintenance Request
-                </button>
+                </button>}
                 <img src={MessagesIcon} alt="message-icon" className='message-icon' />
                 <img src={NotificationIcon} alt="notification-icon" className='notification-icon' />
               </div>

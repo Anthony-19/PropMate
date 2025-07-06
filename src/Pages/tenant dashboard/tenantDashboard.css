@@ -1189,76 +1189,6 @@
   max-width: 80%;
 }
 
-
-/* Maintenance Dashboard Screen */
-  
-/* ========== Main Content ========== */
-  /* .maintenance {
-    padding: 2rem;
-    background-color: #fff;
-    flex: 1;
-  } */
-  /* .maintenance-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-  .maintenance-text h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-  }
-  .maintenance-text p {
-    margin: 0.2rem 0;
-    font-size: 0.9rem;
-    color: #333;
-  }
-  .maintenance-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .btn-request {
-    background-color: #174EA6;
-    color: white;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  } */
-   /* Style for the icon buttons */
-/* .icon-btn {
- background: #fff;
-  border: 1px solid #e0e0e0;
-  color: #17428F;
-  border-radius: 30%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: background 0.2s, color 0.2s;
-  padding: 0;
-  cursor: pointer;
-}
-
-.header-icons :hover {
-  background: #17428F;
-  color: #fff;
-  border-color: #17428F;
-}
-  .header-icons {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  
-  } */
    .maintenance-section-tenant-container{
     font-family: 'Inter', sans-serif;
    }
@@ -1292,6 +1222,7 @@
   }
  .maintenance-section-tenant .request-table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     font-size: 0.85rem;
     background-color: #FDFCFA;
@@ -1302,7 +1233,7 @@
   .maintenance-section-tenant .request-table td {
     padding: 0.75rem;
     text-align: left;
-    border: 0.5px solid#000000;
+    border: 1.8px solid #B8B8B8;
     vertical-align: top;
   }
    .maintenance-section-tenant .request-table td{
@@ -1369,11 +1300,7 @@
     text-align: center !important;
   }
   .maintenance-section-tenant .see-details {
-    /* color: #00000099;
-    font-weight: 400; */
     text-align: end !important;
-    /* padding-bottom: 0rem !important;
-    margin-bottom: 0rem !important; */
     font-size: 0.2rem !important;
   }
     .maintenance-section-tenant .see-details a{
@@ -1382,183 +1309,169 @@
     font-size: 0.6rem !important;
   }
 
-  /* Details Popup */
-.maintenance-section-tenant .details-popup {
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 350px;
-  z-index: 1000;
-  display: none;
-  font-size: 0.9rem;
-  color: #333;
-}
 
-.maintenance-section-tenant .details-popup.show {
-  display: block;
-}
 
-.maintenance-section-tenant .details-popup::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: -10px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent white transparent transparent;
-}
-/* ===============================
-   Modal Overlay (dark background)
-   =============================== */
-   .maintenance-section-tenant .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+
+ /* Payment Screen */
+ .payment-section-tenant-container {
     width: 100%;
-    height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: #EEF4FE; /* Solid black background */
-    z-index: 9999;
+    max-width: 100%;
+  }
+  .payment-section-tenant-container .payment-header p span{
+    font-weight: 500;
+    color: #201F23;
+  }
+  .payment-section-tenant-container .payment-header p {
+    /* margin: 0.25rem 0; */
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #686868;
+  }
+    .payment-section-tenant-container .payment-header #lease-duration {
+    margin-bottom: 0.5rem;
   }
   
-  /* Show modal */
-  .maintenance-section-tenant .modal-overlay.show {
+  /* Current Payment Card */
+     .payment-section-tenant-container .current-payment-card {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0px 8px 0px #174EA6;
+    background-color: #FDFCFA;
+    max-width: 500px;
+    
+  }
+  .payment-section-tenant-container .current-payment-details {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .payment-section-tenant-container .current-payment-card .label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #201F23;
+    margin-bottom: 0.3rem;
   }
   
-  /* ===============================
-     Modal Box Content (centered)
-     =============================== */
-.maintenance-section-tenant .modal-content {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 16px;
-  width: 700px;         
-  max-width: 50%;
-  max-height: 70vh;
-  overflow-y: auto;
-  box-shadow: 0 0 0 6px #f3f3f3, 0 8px 20px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.9s ease-in-out;
-}
-  
-  /* Title */
-  .modal-content h4 {
-    text-align: center;
-    margin-bottom: 1.8rem;
-    font-size: 1.2rem;
+  .payment-section-tenant-container .current-payment-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #F24822;
+    margin-bottom: 1rem;
   }
   
-  /* Labels */
-  .modal-content label {
-    font-size: 0.85rem;
-    margin-bottom: 0.25rem;
-    display: block;
-    color: #444;
+  .payment-section-tenant-container .payment-meta {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
-  
-  /* Inputs and Textarea */
-  .modal-content input[type="text"],
-  .modal-content textarea {
+   .payment-section-tenant-container .payment-meta span{
+    font-weight: 500;
+    color: #201F23;
+   }
+  .payment-section-tenant-container .status-container img{
     width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.2rem;
-    border: 1px solid #17428F;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    background-color: #fff;
+    max-width: 1rem;
+    margin-right: 0.3rem;
+    margin-left: 0.2rem;
   }
-  
-  /* Textarea */
-  .modal-content textarea {
-    resize: vertical;
-    min-height: 140px;
-  }
-  
-  /* ===========================
-     Image Upload Section
-     =========================== */
-  .image-upload-wrapper {
-    border: 1px solid #17428F;
-    border-radius: 6px;
-    padding: 0.75rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: #666;
-    position: relative;
-    background-color: #fdfdfd;
-  }
-  
-  .image-upload-wrapper input[type="file"] {
-    display: none;
-  }
-  
-  .image-upload-wrapper label {
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: #666;
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  .image-upload-wrapper i {
-    margin-left: 0.5rem;
-    font-size: 1.2rem;
-  }
-  
-  /* ===========================
-     Action Buttons
-     =========================== */
-  .modal-actions {
+  .payment-section-tenant-container .status-container {
     display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 0.4rem;
   }
   
-  .cancel-btn {
-    background-color: transparent;
-    color: #17428F;
-    border: 1px solid #17428F;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #e9f1ff;
-  }
-  
-  .submit-btn {
+  .payment-section-tenant-container .receipt-btn {
+    /* width: 100%;
+    max-width: 300px; */
     background-color: #17428F;
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 10rem;
+    font-size: 0.85rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    margin-top: 3rem;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 0rem auto;
+  }
+  
+  /* Payment Table */
+
+  
+  .payment-section-tenant-container .payment-history-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000000;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+ .payment-section-tenant-container .payment-history-table {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    font-size: 1rem;
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+  }
+  
+ .payment-section-tenant-container .payment-history-table th,
+ .payment-section-tenant-container .payment-history-table td {
+    padding: 0.75rem;
+    border: 1.8px solid #B8B8B8;
+    text-align: center;
+  }
+ .payment-section-tenant-container .payment-history-table td{
+    font-size: 0.7rem;
     font-weight: 500;
   }
   
-  .submit-btn:hover {
-    background-color: #0f3b78;
+
+  .payment-section-tenant-container .download-icon{
+    padding-left: 3rem;
+
+  }
+ .payment-section-tenant-container .checkmark-icon-paid{
+    width: 100%;
+    max-width: 1rem;
+    margin-right: 0.3rem;
+  }
+  .payment-section-tenant-container .paid-status-container{
+     display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .payment-section-tenant-container .paid-status{
+    color: #319F43;
   }
   
-  /* ===========================
-     Animation (fade)
-     =========================== */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.96);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  /* Proceed Button */
+  .payment-section-tenant-container .proceed-to-pay-container {
+    width: 100%;
+    margin-top: 3.5rem;
   }
-  
+   .payment-section-tenant-container .proceed-to-pay-container h5{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+  }
+  .payment-section-tenant-container .pay-btn {
+    display: flex;
+    align-items: center;
+    background-color: #174EA6;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    padding: 0.6rem 8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 auto;
+  }
