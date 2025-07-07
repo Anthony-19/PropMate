@@ -10,8 +10,8 @@ function HeaderDashboard(props) {
    else if (location.pathname.includes('payment-tenant-screen')) {
     text = "Payment";
    }
-    else if (location.pathname.includes('')) {
-    text = "Maintenance Requests";
+    else if (location.pathname.includes('lease-tenant-screen')) {
+    text = "Lease Agreement";
    }
    else{
     text = "Dashboard";

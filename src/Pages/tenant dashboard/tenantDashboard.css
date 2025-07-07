@@ -1402,8 +1402,6 @@
   }
   
   /* Payment Table */
-
-  
   .payment-section-tenant-container .payment-history-title{
     font-size: 1.2rem;
     font-weight: 500;
@@ -1475,3 +1473,184 @@
     cursor: pointer;
     margin: 0 auto;
   }
+
+
+  /* Lease Section */
+  .lease-tenant-details-container{
+    width: 100%;
+    max-width: 90%;
+    margin: 2rem auto 3rem auto;
+  }
+  .lease-tenant-screen-container .lease-details-container{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  .lease-tenant-screen-container .lease-action{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+   .lease-tenant-details-container .lease-details-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+ }
+ .lease-tenant-details-container .lease-details-box p {
+    font-size: 0.8rem;
+    color: #686868;
+   
+  }
+   .lease-tenant-details-container .lease-details-box p span{
+    font-weight: 500;
+    color: #201F23;
+   
+  }
+  
+  .lease-tenant-details-container .lease-details-box h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lease-tenant-details-container .lease-details-box img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+
+ }
+ .lease-agreement-btn-download{
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-color: #174EA6;
+  color: white;
+ }
+ .lease-agreement-download-icon{
+  padding-left: 1rem;
+  color: white;
+ }
+ .lease-tenant-screen-container .view-full-lease{
+  color: #174EA6;
+  font-weight: 500;
+  border: 1.5px solid #174EA6;
+ }
+
+.lease-tenant-screen-container .terms-title{
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+.lease-tenant-screen-container .terms-label{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.lease-tenant-screen-container .terms-box a{
+text-decoration: none;
+}
+.lease-tenant-screen-container .note span{
+color: #000000;
+font-weight: 500;
+}
+
+  .lease-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .lease-header > div:first-child {
+    text-align: left;
+  }
+  
+  .lease-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lease-header p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+  }
+  
+  .lease-summary-box {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    
+  }
+  .lease-summary-box h6 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0.5rem 0;
+
+  }
+  
+  .summary-table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .summary-table td {
+    padding: 0.5rem 0;
+    vertical-align: top;
+  }
+  
+  .terms-box {
+    font-size: 0.85rem;
+    margin-top: 2rem;
+  }
+ 
+  .download {
+  color: #ffffff; 
+  background-color: #174EA6;
+  border-radius: 3px;
+  padding: 7px 32px; 
+  font-size: 1rem;
+  cursor: pointer;
+}
+.download:hover {
+  background-color: #0f3a7c; 
+  color: #ffffff; 
+}
+.agreement {
+    border: 1px solid #174EA6;
+    color: #174EA6;
+    background-color: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .agreement:hover {
+    background-color: #174EA6;
+    color: #ffffff;
+  }
+  
+
+  
+  .terms-box a {
+    color: #17428F;
+    text-decoration: underline;
+  }
+  
+  .terms-box .note {
+    font-size: 0.75rem;
+    color: #555;
+  }
+  .lease-summary-actions {
+  display: flex;
+  justify-content: space-between;
+  
+  margin-top: 1rem;
+}
+  
+ 

@@ -73,7 +73,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <NavLink className="sidebar-nav-link" to="../pages/tenant_lease.html">
+              <NavLink className="sidebar-nav-link" to="lease-tenant-screen" end>
               {({isActive}) => (
                 <> 
               <img src={isActive ? leaseIconActive : leaseIcon} className="lease-icon" alt='lease-icon' />
@@ -159,7 +159,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <NavLink className="sidebar-nav-link" to="../pages/tenant_lease.html">
+              <NavLink className="sidebar-nav-link" to="lease-tenant-screen" end>
               {({isActive}) => (
                 <> 
               <img src={isActive ? leaseIconActive : leaseIcon} className="lease-icon" alt='lease-icon' title='Lease'/>

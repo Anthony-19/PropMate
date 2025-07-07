@@ -25,6 +25,7 @@ import TenantDashboard from './Pages/tenant dashboard/TenantDashboard'
 import MaintenanceSection from './Pages/tenant dashboard/MaintenanceScreen'
 import TenantDashboardScreen from './Pages/tenant dashboard/DashboardScreen'
 import PaymentScreen from './Pages/tenant dashboard/PaymentScreen'
+import LeaseScreen from './Pages/tenant dashboard/LeaseScreen'
 
 import LandLordDashboard from './Pages/landlord Dashboard/LandLordDashboard'
 import PropertiesScreen from './Pages/landlord Dashboard/PropertiesScreen'
@@ -126,6 +127,7 @@ const navigate = useNavigate()
             <Route index element={<TenantDashboardScreen />} />
             <Route path='maintenance-tenant-screen' element={< MaintenanceSection />} />
             <Route path='payment-tenant-screen' element={<PaymentScreen />} />
+            <Route path='lease-tenant-screen' element={<LeaseScreen />} />
             {/* <Route path='track-rent' element={<TenantDashboard.TrackRentScreen />} />
             <Route path='messages' element={<TenantDashboard.MessagesScreen />} /> */}
           </Route>
