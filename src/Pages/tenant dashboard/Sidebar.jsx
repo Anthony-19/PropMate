@@ -83,7 +83,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item">
-              <NavLink className="sidebar-nav-link" to="../pages/tenant_settings.html">
+              <NavLink className="sidebar-nav-link" to="settings-tenant-screen">
               {({isActive}) => (
                 <>
                <img src={isActive ? settingIconActive : settingIcon} className="settings-icon" alt='setting-icon' />
@@ -168,7 +168,7 @@ function Sidebar(props) {
               </NavLink>
             </li>
             <li className="sidebar-nav-item s-nav-item">
-              <NavLink className="sidebar-nav-link" to="../pages/tenant_settings.html">
+              <NavLink className="sidebar-nav-link" to="settings-tenant-screen">
                 {({isActive}) => (
                 <>
                <img src={isActive ? settingIconActive : settingIcon} className="settings-icon" alt='setting-icon' title='Settings' />

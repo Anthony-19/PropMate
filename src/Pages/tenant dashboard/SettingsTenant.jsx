@@ -1,0 +1,167 @@
+import React, { useState } from "react";
+import TrackRentScreen from "./TrackRentScreen";
+import changePasswordIcon from "../../Assets/Images/change-password-tenant-icon.svg";
+import twoFactorIcon from "../../Assets/Images/two-factor-authentication-tenant-icon.svg";
+import languageIcon from "../../Assets/Images/language-tenant-icon.svg";
+import emailNotificationIcon from "../../Assets/Images/email-notification-tenant-icon.svg";
+import smsAlertIcon from "../../Assets/Images/sms-alert-tenant-icon.svg";
+import paymentHistoryIcon from "../../Assets/Images/payment-history-tenant-icon.svg";
+import pushNotificationIcon from "../../Assets/Images/push-notification-tenant-icon.svg";
+import rentRemindersIcon from "../../Assets/Images/rent-reminders-tenant-icon.svg";
+import faqsIcon from "../../Assets/Images/faq-tenant-icon.svg";
+import chatbotIcon from "../../Assets/Images/chatbot-access-tenant-icon.svg";
+
+const SettingsTenant = () => {
+  const [showEdit, setShowEdit] = useState(false);
+
+  return (
+    <>
+      <TrackRentScreen />
+      <section className="settings-tenants-wrapper">
+        <div className="profile-info">
+          <div className="profile-pic">
+            <img
+              src="../Assets/Images/blessing.jpeg"
+              alt="Profile"
+              id="user-profile-pic"
+            />
+            <p>Tenants</p>
+          </div>
+
+          <div className="user-details" id="userDetails">
+            <h3 id="displayName">Blessing Okeke</h3>
+            <p id="displayEmail">blessingokeke@gmail.com</p>
+            <p id="displayPhone">+234 000 000 0000</p>
+            <p id="emergency-contact">
+              <span id="display-emergency">Emergency Contact:</span> <br />
+              +234 000 000 0000
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className="edit-btn"
+            onClick={() => setShowEdit(!showEdit)}
+          >
+            Edit
+          </button>
+
+          {/* {showEdit && (
+          <div className="editable-fields" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+            <input type="text" className="form-control" defaultValue="Blessing Okeke" />
+            <input type="email" className="form-control" defaultValue="blessingokeke@gmail.com" />
+            <input type="tel" className="form-control" defaultValue="+234 000 000 0000" />
+            <input type="tel" className="form-control" defaultValue="+234 000 000 0000" />
+            <button type="button" className="btn btn-sm btn-primary mt-2">
+              Save
+            </button>
+          </div>
+        )} */}
+        </div>
+
+        {/* Settings Sections */}
+        {[
+          {
+            title: "Profile",
+            rows: [
+              {
+                icon: changePasswordIcon,
+                text: "Change Password",
+              },
+              {
+                icon: twoFactorIcon,
+                text: "Two-Factor Authentication",
+                toggle: true,
+                checked: true,
+              },
+              {
+                icon: languageIcon,
+                text: "Language",
+                trailing: "English",
+              },
+            ],
+          },
+          {
+            title: "Notifications",
+            rows: [
+              {
+                icon: emailNotificationIcon,
+                text: "Email Notifications",
+                toggle: true,
+                checked: true,
+              },
+              {
+                icon: smsAlertIcon,
+
+                text: "SMS Alert",
+                toggle: true,
+              },
+              {
+                icon: pushNotificationIcon,
+                text: "Push Notifications",
+                toggle: true,
+                checked: true,
+              },
+            ],
+          },
+          {
+            title: "Account & Payment",
+            rows: [
+              {
+                icon: paymentHistoryIcon,
+                text: "Payment History",
+              },
+              {
+                icon: rentRemindersIcon,
+                text: "Rent Reminders",
+                toggle: true,
+              },
+            ],
+          },
+          {
+            title: "Help & Support",
+            rows: [
+              {
+                icon: faqsIcon,
+                text: "FAQs",
+              },
+              {
+                icon: chatbotIcon,
+                text: "Chatbot Access",
+              },
+            ],
+          },
+        ].map((section, index) => (
+          <div className="settings-section expanded" key={index}>
+            <div className="section-header">
+              <h4>{section.title}</h4>
+              <i class="fas fa-chevron-down dropup-icon"></i>
+            </div>
+            <div className="section-body">
+              {section.rows.map((row, idx) => (
+                <div className="section-row" key={idx}>
+                  <div className="section-row-content">
+                    <img src={row.icon} alt="" />
+                    <p className="section-row-text">{row.text}</p>
+                  </div>
+                  {row.toggle ? (
+                    <label className="switch">
+                      <input type="checkbox" defaultChecked={row.checked} />
+                      <span className="slider round"></span>
+                    </label>
+                  ) : row.trailing ? (
+                    <span>{row.trailing}</span>
+                  ) : (
+                    <i class="fas fa-chevron-down dropleft-icon"></i>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+    </>
+  );
+};
+
+export default SettingsTenant;

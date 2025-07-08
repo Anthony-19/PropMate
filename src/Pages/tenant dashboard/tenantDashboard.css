@@ -1554,103 +1554,196 @@
   cursor: pointer;
   margin-bottom: 2rem;
 }
+.lease-tenant-screen-container .terms-box .note {
+    font-size: 0.75rem;
+    color: #555;
+  }
 .lease-tenant-screen-container .terms-box a{
 text-decoration: none;
+  color: #17428F;
 }
 .lease-tenant-screen-container .note span{
 color: #000000;
 font-weight: 500;
 }
 
-  .lease-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  
-  .lease-header > div:first-child {
-    text-align: left;
-  }
-  
-  .lease-header h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .lease-header p {
-    margin: 0.25rem 0;
-    font-size: 1rem;
-  }
-  
-  .lease-summary-box {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem;
-    
-  }
-  .lease-summary-box h6 {
-    font-size: 1.3rem;
-    text-align: center;
-    margin: 0.5rem 0;
 
+/* Settings  */
+
+ .settings-tenants-wrapper {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  border: 1px solid #858585;
+  background-color: #FDFCFA;
+    padding: 2rem 0rem;
   }
-  
-  .summary-table {
+    
+  /* Profile Info */
+  .settings-tenants-wrapper .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1.5rem;
+    position: relative;
     width: 100%;
-    font-size: 0.9rem;
+    max-width: 75%;
+    margin: 0rem auto 4rem auto;
+  }
+  .settings-tenants-wrapper .profile-pic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .settings-tenants-wrapper .profile-pic p{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #686868;
   }
   
-  .summary-table td {
-    padding: 0.5rem 0;
-    vertical-align: top;
+  .settings-tenants-wrapper .profile-info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* margin-right: 1.5rem; */
   }
   
-  .terms-box {
+  .settings-tenants-wrapper .user-details h3 {
+
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+  
+   .settings-tenants-wrapper .user-details p {
+    
+      font-size: 1rem;
+   font-weight: 300;
+    color: #686868;
+  }
+ .settings-tenants-wrapper #emergency-contact{
+ font-size: 0.7rem;
+ margin-top: 1rem;
+ font-weight: 400;
+ }
+ .settings-tenants-wrapper #display-emergency {
+   font-weight: 500;
+ }
+  
+ .settings-tenants-wrapper .edit-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border: 1px solid #17428F;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: #17428F;
     font-size: 0.85rem;
-    margin-top: 2rem;
+    text-decoration: none;
   }
- 
-  .download {
-  color: #ffffff; 
-  background-color: #174EA6;
-  border-radius: 3px;
-  padding: 7px 32px; 
-  font-size: 1rem;
-  cursor: pointer;
-}
-.download:hover {
-  background-color: #0f3a7c; 
-  color: #ffffff; 
-}
-.agreement {
-    border: 1px solid #174EA6;
-    color: #174EA6;
-    background-color: #ffffff;
-    border-radius: 3px;
+
+  
+  
+  /* Accordion Section */
+  .settings-tenants-wrapper .settings-section {
+    border-top: 1px solid #ddd;
+    padding: 1rem 3rem;
+  }
+  
+   .settings-tenants-wrapper .section-header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    /* font-size: 1rem; */
+    color: #17428F;
+  }
+  .settings-tenants-wrapper .section-header h4 {
+   font-size: 1.2rem;
+   font-weight: 500;
+   font-family: 'Inter', sans-serif;
+  }
+
+  .settings-tenants-wrapper .section-header .dropup-icon {
+    transform: rotate(180deg);
+  }
+  .dropleft-icon{
+    transform: rotate(270deg);
     cursor: pointer;
   }
-  .agreement:hover {
-    background-color: #174EA6;
-    color: #ffffff;
+  
+  /* .section-body {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+  } */
+  
+  .section-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    color: #333;
   }
   
-
-  
-  .terms-box a {
+  .section-row i {
+    /* margin-right: 0.6rem; */
     color: #17428F;
-    text-decoration: underline;
   }
   
-  .terms-box .note {
-    font-size: 0.75rem;
-    color: #555;
+  .section-row-text{
+    font-size: 0.8rem;
+    font-weight: 500;
   }
-  .lease-summary-actions {
-  display: flex;
-  justify-content: space-between;
-  
-  margin-top: 1rem;
-}
-  
- 
+  .section-row-content{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    max-width: 50%;
+    gap: 0.5rem;
+  }
+  .section-row-content img{
+    width: 100%;
+    max-width: 1rem;
+  }
+
+  /* Toggle Switches */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; width: 16px;
+    left: 2px; bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #28a745;
+  }
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+

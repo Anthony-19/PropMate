@@ -13,6 +13,9 @@ function HeaderDashboard(props) {
     else if (location.pathname.includes('lease-tenant-screen')) {
     text = "Lease Agreement";
    }
+     else if (location.pathname.includes('settings-tenant-screen')) {
+    text = "Settings";
+   }
    else{
     text = "Dashboard";
    }
