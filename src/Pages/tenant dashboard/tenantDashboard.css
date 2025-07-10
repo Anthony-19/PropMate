@@ -1670,16 +1670,13 @@ font-weight: 500;
   .settings-tenants-wrapper .section-header .dropup-icon {
     transform: rotate(180deg);
   }
-  .dropleft-icon{
+   .settings-tenants-wrapper .dropleft-icon{
     transform: rotate(270deg);
     cursor: pointer;
   }
   
-  /* .section-body {
-    padding: 0.5rem 0 0.5rem 0.5rem;
-  } */
   
-  .section-row {
+   .settings-tenants-wrapper .section-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1688,16 +1685,15 @@ font-weight: 500;
     color: #333;
   }
   
-  .section-row i {
-    /* margin-right: 0.6rem; */
+   .settings-tenants-wrapper .section-row i {
     color: #17428F;
   }
   
-  .section-row-text{
+   .settings-tenants-wrapper .section-row-text{
     font-size: 0.8rem;
     font-weight: 500;
   }
-  .section-row-content{
+   .settings-tenants-wrapper .section-row-content{
     display: flex;
     align-items: center;
     justify-content: start;
@@ -1705,24 +1701,24 @@ font-weight: 500;
     max-width: 50%;
     gap: 0.5rem;
   }
-  .section-row-content img{
+   .settings-tenants-wrapper .section-row-content img{
     width: 100%;
     max-width: 1rem;
   }
 
   /* Toggle Switches */
-  .switch {
+  .settings-tenants-wrapper .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
   }
-  .switch input {
+   .settings-tenants-wrapper .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  .slider {
+   .settings-tenants-wrapper .slider {
     position: absolute;
     cursor: pointer;
     top: 0; left: 0;
@@ -1731,7 +1727,7 @@ font-weight: 500;
     transition: .4s;
     border-radius: 20px;
   }
-  .slider:before {
+  .settings-tenants-wrapper .slider:before {
     position: absolute;
     content: "";
     height: 16px; width: 16px;
@@ -1740,10 +1736,10 @@ font-weight: 500;
     transition: .4s;
     border-radius: 50%;
   }
-  input:checked + .slider {
+  .settings-tenants-wrapper input:checked + .slider {
     background-color: #28a745;
   }
-  input:checked + .slider:before {
+   .settings-tenants-wrapperinput:checked + .slider:before {
     transform: translateX(20px);
   }
 
