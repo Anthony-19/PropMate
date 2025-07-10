@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import TrackRentScreen from "./TrackRentScreen";
-import changePasswordIcon from "../../Assets/Images/change-password-tenant-icon.svg";
-import twoFactorIcon from "../../Assets/Images/two-factor-authentication-tenant-icon.svg";
-import languageIcon from "../../Assets/Images/language-tenant-icon.svg";
-import emailNotificationIcon from "../../Assets/Images/email-notification-tenant-icon.svg";
-import smsAlertIcon from "../../Assets/Images/sms-alert-tenant-icon.svg";
-import paymentHistoryIcon from "../../Assets/Images/payment-history-tenant-icon.svg";
-import pushNotificationIcon from "../../Assets/Images/push-notification-tenant-icon.svg";
-import rentRemindersIcon from "../../Assets/Images/rent-reminders-tenant-icon.svg";
-import faqsIcon from "../../Assets/Images/faq-tenant-icon.svg";
-import chatbotIcon from "../../Assets/Images/chatbot-access-tenant-icon.svg";
+import changePasswordIcon from "../../assets/images/change-password-tenant-icon.svg";
+import twoFactorIcon from "../../assets/images/two-factor-authentication-tenant-icon.svg";
+import languageIcon from "../../assets/images/language-tenant-icon.svg";
+import emailNotificationIcon from "../../assets/images/email-notification-tenant-icon.svg";
+import smsAlertIcon from "../../assets/images/sms-alert-tenant-icon.svg";
+import paymentHistoryIcon from "../../assets/images/payment-history-tenant-icon.svg";
+import pushNotificationIcon from "../../Assets/images/push-notification-tenant-icon.svg";
+import rentRemindersIcon from "../../assets/images/rent-reminders-tenant-icon.svg";
+import faqsIcon from "../../assets/images/faq-tenant-icon.svg";
+import chatbotIcon from "../../assets/images/chatbot-access-tenant-icon.svg";
 
 const SettingsTenant = () => {
   const [showEdit, setShowEdit] = useState(false);
