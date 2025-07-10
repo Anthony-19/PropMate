@@ -6,7 +6,7 @@ import languageIcon from "../../assets/images/language-tenant-icon.svg";
 import emailNotificationIcon from "../../assets/images/email-notification-tenant-icon.svg";
 import smsAlertIcon from "../../assets/images/sms-alert-tenant-icon.svg";
 import paymentHistoryIcon from "../../assets/images/payment-history-tenant-icon.svg";
-import pushNotificationIcon from "../../Assets/images/push-notification-tenant-icon.svg";
+import pushNotificationIcon from "../../assets/images/push-notification-tenant-icon.svg";
 import rentRemindersIcon from "../../assets/images/rent-reminders-tenant-icon.svg";
 import faqsIcon from "../../assets/images/faq-tenant-icon.svg";
 import chatbotIcon from "../../assets/images/chatbot-access-tenant-icon.svg";
