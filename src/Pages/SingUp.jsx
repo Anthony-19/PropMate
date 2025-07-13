@@ -46,6 +46,8 @@ const Signup = () => {
     setOtp(inputValue);
     setOtpError(''); // Clear error if input is valid
   }
+
+  const [loading, setLoading] = useState(false);
   // const handleInput = (value, index) => {
   //     setOtp((prev) => {
   //       const newOtp = [...prev];
@@ -175,6 +177,7 @@ const handleOtp = async() => {
     e.preventDefault();
     try{
       if (validate()) {
+        setLoading(true);
       console.log('Form submitted', formData);
       const response = await fetch('https://pms-bd.onrender.com/api/auth/register', {
         method: 'POST',
@@ -200,6 +203,7 @@ const handleOtp = async() => {
         else{
           throw new Error(data.message || 'Registration failed');
         }
+       
     }
     }
     catch (error) {
@@ -207,11 +211,14 @@ const handleOtp = async() => {
         setErrors({ submit: error.message || 'User Already Exist' });
       // setErrors({ submit: 'User Already Exist' });
       // setErrors({ submit: error });
+    } finally{
+      setLoading(false);
     }
   };
 
   const handleGoogle = async () => {
      if (role) {
+      setLoading(true);
     // Redirect user to backend endpoint which starts the OAuth flow
     window.location.href = `https://pms-bd.onrender.com/api/auth/google?role=${role}`;
   } else {
@@ -324,9 +331,17 @@ const handleOtp = async() => {
                 </div>
                 {errors.termsAccepted && <small className="error-message" id='error-message'>{errors.termsAccepted}</small>}
               </div>
-              <button type="submit" className="signup-btn" id='signup-btn'>Sign up</button>
+              <div>
+                  
+                  <button type="submit" className="signup-btn" id='signup-btn' disabled={loading}> 
+                    {loading &&<span id='loader'></span>}
+                      Sign up
+                    </button>
+              </div>
+              
               <div className="divider"><span className='divider-span'></span> <p>or</p> <span className='.divider-span'></span></div>
-              <button type="button" className="google-btn" onClick={handleGoogle}>
+              <button type="button" className="google-btn" onClick={handleGoogle} disabled={loading}>
+                 {loading && <span id='loader'></span>}
                 <img src="/public/Assets/Images/google-icon.svg" alt=""  id='google-icon'/>
                 Sign Up with Google
               </button>

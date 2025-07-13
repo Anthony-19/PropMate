@@ -62,6 +62,15 @@ function GoogleAuthentication() {
     }
   }, [location.search, navigate]);
 
+  //  if (error) {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center">
+  //       <div className="text-red-600">{error}</div>
+  //     </div>
+  //   );
+  // }
+
+
   return (
     <div style={{
       display: 'flex',
@@ -72,6 +81,7 @@ function GoogleAuthentication() {
       <p>Signing you in with Google...</p>
     </div>
   );
+
 }
 
 export default GoogleAuthentication;

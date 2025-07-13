@@ -42,6 +42,41 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+/* loading icon */
+#loader {
+  /* border: 2px solid white;
+  border-bottom: 2px solid blue;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite; */
+  border: 3px solid white;
+  border-top: 3px solid blue;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#signup-btn {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap : 0.5rem;
+  width: 100%;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* Buttons */
 .login-btn{
   background: none;
@@ -55,6 +90,7 @@
 }
 
 .signUp-btn {
+ 
   background: none;
   background-color: #FFFFFF;
   border: none;

@@ -4,6 +4,9 @@ import Header from './components/Header'
 import SignIn from './Pages/SignIn'
 import SignUp from './Pages/SingUp'
 import { Footer } from './components/Footer'
+
+import GoogleAuthentication from './Pages/GoogleAuthentication'
+
 import NavigationLinks from './components/NavigationLinks'
 import OtpVerification from './components/OtpVerification'
 import LandingPage from './Pages/LandingPage'
@@ -18,7 +21,7 @@ import InvitedTenant from './Pages/InvitedTenant'
 import ProgressBar from './components/ProgressBar'
 import CompletedScreen from './components/CompletedScreen'
 import LandlordWelcome from './Pages/landlord Onboarding/LandlordWelcome'
-import GoogleAuthentication from './Pages/GoogleAuthentication'
+// import GoogleAuthentication from './Pages/GoogleAuthentication'
 import Chatbot from './Pages/Chatbot'
 import HeaderInvited from './components/HeaderInvited'
 import TenantDashboard from './Pages/tenant dashboard/TenantDashboard'
@@ -110,6 +113,10 @@ const navigate = useNavigate()
       {shouldShowHeader && <Header />}
 
         <Routes>
+
+          <Route path="/landlord-welcome" element={<GoogleAuthentication />} />
+          <Route path="/invited-tenant" element={<GoogleAuthentication />} />
+
           <Route path='/' element={<LandingPage />}/>
           <Route path='/otp-verification' element={<OtpVerification />}/>
           <Route path='/signin' element={<SignIn />}/>
