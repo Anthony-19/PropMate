@@ -47,7 +47,7 @@ const Signup = () => {
     setOtpError(''); // Clear error if input is valid
   }
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState('');
   // const handleInput = (value, index) => {
   //     setOtp((prev) => {
   //       const newOtp = [...prev];
@@ -177,7 +177,7 @@ const handleOtp = async() => {
     e.preventDefault();
     try{
       if (validate()) {
-        setLoading(true);
+        setLoading('form');
       console.log('Form submitted', formData);
       const response = await fetch('https://pms-bd.onrender.com/api/auth/register', {
         method: 'POST',
@@ -218,9 +218,9 @@ const handleOtp = async() => {
 
   const handleGoogle = async () => {
      if (role) {
-      setLoading(true);
+      setLoading('google');
     // Redirect user to backend endpoint which starts the OAuth flow
-    window.location.href = `https://pms-bd.onrender.com/api/auth/google?role=${role}`;
+    window.location.href = `https://pms-bd.onrender.com/api/auth/google?role=${role}&type=signup`;
   } else {
     alert("Please select a role first.");
    
@@ -333,15 +333,15 @@ const handleOtp = async() => {
               </div>
               <div>
                   
-                  <button type="submit" className="signup-btn" id='signup-btn' disabled={loading}> 
-                    {loading &&<span id='loader'></span>}
+                  <button type="submit" className="signup-btn" id='signup-btn' disabled={loading === 'form'}> 
+                    {loading === 'form' &&<span id='loader'></span>}
                       Sign up
                     </button>
               </div>
               
               <div className="divider"><span className='divider-span'></span> <p>or</p> <span className='.divider-span'></span></div>
-              <button type="button" className="google-btn" onClick={handleGoogle} disabled={loading}>
-                 {loading && <span id='loader'></span>}
+              <button type="button" className="google-btn" onClick={handleGoogle} disabled={loading === 'google'}>
+                 {loading === 'google' && <span id='loader'></span>}
                 <img src="/public/Assets/Images/google-icon.svg" alt=""  id='google-icon'/>
                 Sign Up with Google
               </button>

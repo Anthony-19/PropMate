@@ -51,8 +51,8 @@
   height: 24px;
   border-radius: 50%;
   animation: spin 1s linear infinite; */
-  border: 3px solid white;
-  border-top: 3px solid blue;
+  border: 4px solid white;
+  border-top: 4px solid blue;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -64,7 +64,14 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/* #login-btn{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap : 0.5rem !important;
+  width: 100%;
 
+} */
 #signup-btn {
    display: flex;
   align-items: center;

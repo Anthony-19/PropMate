@@ -1,4 +1,7 @@
+// import React, { useState } from 'react'
+
 export const Button = (props) => {
+    // const [loading, setLoading] = useState(false);
     return(
         <button className="form-button">
         {props.icon && <img src={props.icon} alt=""/> }
@@ -8,12 +11,20 @@ export const Button = (props) => {
    
 }
 
-export const LoginButton = () => {
+export const LoginButton = (props) => {
+    const style = {
+         display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "0.5rem",
+        width: "100%",
+        cursor:'pointer',
+    }
     return(
         <>
-        <button className="login-btn">
-
-            Login
+        <button id="login-btn" disabled={props.loading} style={style}>
+            {props.loading && <span id='loader'></span>}
+           Login
         </button>
         </>
     )

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import eyeIcon from '../assets/images/eye-icon.svg'
 import googleIcon from '../assets/images/google-icon.svg'
-import { Button } from '../components/Button.jsx'
+import { LoginButton } from '../components/Button.jsx'
 import { HaveAccount } from '../components/HaveAccount.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 export default function SignIn(){
@@ -12,6 +12,14 @@ export default function SignIn(){
     //       document.body.classList.remove('signin-background');
     //     };
     //   }, []);
+
+    const [loading, setLoading] = useState('');
+     const handleGoogle = async () => {
+      setLoading('google');
+    // Redirect user to backend endpoint which starts the OAuth flow
+    window.location.href = `https://pms-bd.onrender.com/api/auth/google?type=signin`;
+}
+
     const navigate = useNavigate()
     const text = (
         <>
@@ -88,8 +96,9 @@ export default function SignIn(){
             //    if(!validate()) return;
             // navigate('/invited-tenant')
             // navigate('/landlord-welcome')
-
+             setLoading('form');
                try{
+               
                 const response = await fetch('https://pms-bd.onrender.com/api/auth/login', {
                     method:'POST',
                     headers: {
@@ -101,11 +110,12 @@ export default function SignIn(){
 
                 
                 if(response.ok){
-                    
+                    setLoading('');
                     const data = await response.json()
                      localStorage.setItem('token', data.token);
                      localStorage.setItem('userName', data.user.name)
                      localStorage.setItem('role', data.user.role)
+                     localStorage.setItem('email', data.user.email)
                     if(data.user.role === 'landlord'){
                         navigate('/landlord-welcome')
                     }
@@ -116,11 +126,13 @@ export default function SignIn(){
 
                 }
                 else{
+                    setLoading('');
                     setError({email: "Invalid email or password"})
                 }
                }
 
                catch(error) {
+                setLoading('');
                   setError({ email: "Something went wrong. Please try again." });
                }
     }
@@ -131,7 +143,7 @@ export default function SignIn(){
             <h4 className="form-header">WELCOME BACK</h4>
             <p className="form-subheader">Sign into your  PropMate account to continue</p>
             <div className="email-phone-number">
-                <label htmlFor="email">Email/Phone Number</label>
+                <label htmlFor="email">Email</label>
                 <input type="text" id="email" name='email' placeholder="Enter your Email"/>
                 {error.email && <span className='error'>{error.email}</span>}
             </div>
@@ -151,8 +163,12 @@ export default function SignIn(){
                 </div>
                 <p className='forgot-password'><Link to='/forgot-password'>Forgot Password</Link></p>
             </div>
-            <div className="login">
-                <Button label="Login" id="login"/>
+            <div className="login" style={{width: "100% !important"}}>
+                {/* <button className="login-btn" disabled={loading === 'form'}>
+                 {loading === 'form' && <span id='loader'></span>}
+           Login
+        </button> */}
+                <LoginButton label="Login" id="login" loading={loading === 'form'}/>
             </div>
             <div className="line-breaker">
                 <span></span>
@@ -160,7 +176,12 @@ export default function SignIn(){
                 <span></span>
             </div>
             <div className="google-login">
-                <Button label="Continue with Google" icon={googleIcon} id="google-login"/>
+                 <button type="button" className="form-button" onClick={handleGoogle} disabled={loading === 'google'}>
+                 {loading === 'google' && <span id='loader'></span>}
+                <img src="/public/Assets/Images/google-icon.svg" alt=""  id='google-icon'/>
+                Sign Up with Google
+              </button>
+                {/* <Button label="Continue with Google" icon={googleIcon} id="google-login"/> */}
                 {/* check it out//Google's OAuth 2.0 authentication system. */}
             </div>
             <div id='have-account'>
