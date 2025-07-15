@@ -1,6 +1,6 @@
 import { Link, useLocation, Navigate } from "react-router-dom"
 import NavigationLinks from "./NavigationLinks";
-import { LoginButton, SignUpBtn } from "./Button";
+import { LoginButtonLandingPage, SignUpBtn } from "./Button";
 export default function Header(props){
     const Location = useLocation();
     const showNavLinks = Location.pathname === '/' ? <NavigationLinks /> : null;
@@ -11,7 +11,7 @@ export default function Header(props){
     const showButtons = Location.pathname === '/' ? 
         <div className="header-buttons">
         <Link to="/signin" className="signIn-link">
-            <LoginButton />
+            <LoginButtonLandingPage />
         </Link>
         <Link to="/signup-role" className="signUp-link" >
             <SignUpBtn />

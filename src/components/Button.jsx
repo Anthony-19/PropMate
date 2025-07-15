@@ -11,6 +11,17 @@ export const Button = (props) => {
    
 }
 
+
+export const LoginButtonLandingPage = () => {
+   
+    return(
+        <>
+        <button className="login-btn">
+           Login
+        </button>
+        </>
+    )
+}
 export const LoginButton = (props) => {
     const style = {
          display: "flex",
