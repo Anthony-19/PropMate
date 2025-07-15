@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import dashboardIcon from '../../assets/images/dashboard-icon.svg'
 import maintenanceIcon from '../../assets/images/maintenance-icon.svg'
@@ -20,10 +20,19 @@ function Sidebar(props) {
     // const handleShow = () => {
     //     setShow(prev => !prev)
     // }
-
+ const navigate = useNavigate(); 
   const userName = localStorage.getItem('userName');
   const role = localStorage.getItem('role');
+
+  
    
+  const handleLogOut = () => {
+      // localStorage.clear()
+      // localStorage.removeItem('role')
+      // localStorage.removeItem('userName')
+
+      navigate('/signin')
+  }
 
   return (
     <>
@@ -104,7 +113,7 @@ function Sidebar(props) {
               <h6 className="mb-0 sidebar-user-name">{userName}</h6>
               <h6 className="sidebar-user-name">{role}</h6>
             </div>
-            <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn">
+            <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn" onClick={handleLogOut}>
               <span> Log out</span><i className="fas fa-sign-out"></i>
             </button>
           </div>
@@ -189,7 +198,7 @@ function Sidebar(props) {
               <h6 className="mb-0 sidebar-user-name">{userName}</h6>
               <h6 className="sidebar-user-name">{role}</h6>
             </div>
-            <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn s-l-btn" >
+            <button className="btn btn-sm btn-outline-secondary mt-2 sidebar-logout-btn s-l-btn" onClick={handleLogOut}>
               {/* <span> Log out</span> */}
               <i className="fas fa-sign-out"></i>
             </button>

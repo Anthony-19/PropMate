@@ -20,7 +20,7 @@ export default function SignIn(){
     window.location.href = `https://pms-bd.onrender.com/api/auth/google?type=signin`;
 }
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const text = (
         <>
               Don’t have account? <Link to='/signup-role' className='signUp-text'>Sign Up</Link>
