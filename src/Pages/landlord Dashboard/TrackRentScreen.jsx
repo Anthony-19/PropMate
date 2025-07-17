@@ -7,10 +7,14 @@ function TrackRentScreen() {
   let text = ""
   if (location.pathname.includes('properties')) {
     text = "View and manage all your listed properties. "
+  } else   if (location.pathname.includes('maintenance-landlord-screen')) {
+    text = "View, manage, and respond to maintenance issues reported by tenants."
   }
   else{
     text = "Explore information and activity about your property"
   }
+
+  
 
     const userName = localStorage.getItem('userName');
   // const role = localStorage.getItem('role');
@@ -22,9 +26,9 @@ function TrackRentScreen() {
                 <p className="track-rent-text">{text}</p>
               </div>
               <div className='track-rent-left'>
-                <button className="btn-request" id="openRequestModal">
+              {!location.pathname.includes('maintenance-landlord-screen') ?  <button className="btn-request" id="openRequestModal">
                   <i className="fas fa-plus"></i>Add Property
-                </button>
+                </button> : ''}
                 <img src={MessagesIcon} alt="message-icon" className='message-icon' />
                 <img src={NotificationIcon} alt="notification-icon" className='notification-icon' />
               </div>

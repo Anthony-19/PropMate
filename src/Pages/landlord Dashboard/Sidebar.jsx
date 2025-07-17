@@ -138,7 +138,7 @@ function Sidebar(props) {
                   `sidebar-nav-link ${isActive ? "active" : ""} `
                 }
                 end
-                to="../pages/tenant_payment.html"
+                to="maintenance-landlord-screen"
               >
                 {({ isActive, isPending }) => (
                   <>
@@ -290,7 +290,7 @@ function Sidebar(props) {
                   `sidebar-nav-link ${isActive ? "active" : ""} `
                 }
                 end
-                to="../pages/tenant_payment.html"
+                to="maintenance-landlord-screen"
               >
                 {({ isActive, isPending }) => (
                   <>

@@ -178,7 +178,7 @@ export default function SignIn(){
             <div className="google-login">
                  <button type="button" className="form-button" onClick={handleGoogle} disabled={loading === 'google'}>
                  {loading === 'google' && <span id='loader'></span>}
-                <img src="/public/Assets/Images/google-icon.svg" alt=""  id='google-icon'/>
+                <img src={googleIcon} alt=""  id='google-icon'/>
                 Sign Up with Google
               </button>
                 {/* <Button label="Continue with Google" icon={googleIcon} id="google-login"/> */}

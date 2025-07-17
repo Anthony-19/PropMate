@@ -7,6 +7,8 @@ function HeaderDashboard(props) {
 
   if(location.pathname.includes('properties')) {
     text="Properties"
+  }  else if(location.pathname.includes('maintenance-landlord-screen')) {
+    text="Maintenace"
   }
   else{
     text = "Dashboards"
