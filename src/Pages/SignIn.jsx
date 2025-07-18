@@ -116,18 +116,17 @@ export default function SignIn(){
                      localStorage.setItem('userName', data.user.name)
                      localStorage.setItem('role', data.user.role)
                      localStorage.setItem('email', data.user.email)
-                    //  navigate('/landlord-welcome')
-                    //  navigate('/invited-tenant')
+                  
                     
                    
                     if(data.user.role === 'landlord'){
                         console.log(data.user.role)
                         // navigate('/invited-tenant')
-                        navigate('/landlord-welcome')
+                        navigate('/landlord-dashboard')
                     }
                   
                     else if(data.user.role === 'tenant'){
-                        navigate('/invited-tenant')
+                        navigate('/tenant-dashboard')
                     }
 
                 }

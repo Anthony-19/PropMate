@@ -35,6 +35,7 @@ import LandLordDashboard from './Pages/landlord Dashboard/LandLordDashboard'
 import PropertiesScreen from './Pages/landlord Dashboard/PropertiesScreen'
 import DashboardScreen from './Pages/landlord Dashboard/DashboardScreen'
 import MaintenanceScreenLandlord from './Pages/landlord Dashboard/MaintenanceScreenLandlord'
+import AddProperty from './Pages/landlord Dashboard/AddProperty'
 
 import './App.css'
 
@@ -146,6 +147,7 @@ const navigate = useNavigate()
             <Route index element={<DashboardScreen />} />
             <Route path='properties' element={<PropertiesScreen />} />
             <Route path='maintenance-landlord-screen' element={<MaintenanceScreenLandlord />} />
+            <Route path='add-property-landlord-screen' element={<AddProperty />} />
           </Route>
          
         </Routes>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import MessagesIcon from '../../assets/images/messages-badge-icon.svg'
 import NotificationIcon from '../../assets/images/notification-icon.svg'
 function TrackRentScreen() {
@@ -13,8 +13,12 @@ function TrackRentScreen() {
   else{
     text = "Explore information and activity about your property"
   }
+const navigate = useNavigate()
 
-  
+
+  const handleProperty = () => {
+      navigate('add-property-landlord-screen')
+  }
 
     const userName = localStorage.getItem('userName');
   // const role = localStorage.getItem('role');
@@ -26,7 +30,7 @@ function TrackRentScreen() {
                 <p className="track-rent-text">{text}</p>
               </div>
               <div className='track-rent-left'>
-              {!location.pathname.includes('maintenance-landlord-screen') ?  <button className="btn-request" id="openRequestModal">
+              {!location.pathname.includes('maintenance-landlord-screen') ?  <button className="btn-request" id="openRequestModal" onClick={handleProperty}>
                   <i className="fas fa-plus"></i>Add Property
                 </button> : ''}
                 <img src={MessagesIcon} alt="message-icon" className='message-icon' />
