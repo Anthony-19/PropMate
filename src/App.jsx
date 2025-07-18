@@ -115,8 +115,8 @@ const navigate = useNavigate()
 
         <Routes>
 
-          <Route path="/landlord-welcome" element={<GoogleAuthentication />} />
-          <Route path="/invited-tenant" element={<GoogleAuthentication />} />
+          {/* <Route path="/landlord-welcome" element={<GoogleAuthentication />} />
+          <Route path="/invited-tenant" element={<GoogleAuthentication />} /> */}
 
           <Route path='/' element={<LandingPage />}/>
           <Route path='/otp-verification' element={<OtpVerification />}/>
@@ -130,6 +130,7 @@ const navigate = useNavigate()
           <Route path='/create-new-password' element={<CreateNewPassword />} />
           <Route path='/invited-tenant' element={<InvitedTenant steps={steps} handleClick={handleClick} />} />
           <Route path='/completed-screen' element={<CompletedScreen />} />
+             {/* <Route path='/landlord-welcome' element={<LandlordWelcome />} /> */}
           <Route path='/landlord-welcome/*' element={<LandlordWelcome />} />
           <Route path="/google/callback" element={<GoogleAuthentication />} />
           <Route path="/tenant-dashboard" element={<TenantDashboard />} > 

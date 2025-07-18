@@ -33,7 +33,7 @@ export const LoginButton = (props) => {
     }
     return(
         <>
-        <button id="login-btn" disabled={props.loading} style={style}>
+        <button id="login-btn" disabled={props.loading} style={style} type="submit">
             {props.loading && <span id='loader'></span>}
            Login
         </button>

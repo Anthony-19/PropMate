@@ -26,6 +26,7 @@ function LandlordWelcome() {
   return (
     
     <>
+  
       {location.pathname === '/landlord-welcome' && <HeaderInvited />}
       <Routes> 
         <Route index element={<WelcomeContent />}  />
