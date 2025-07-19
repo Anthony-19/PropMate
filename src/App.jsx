@@ -36,6 +36,7 @@ import PropertiesScreen from './Pages/landlord Dashboard/PropertiesScreen'
 import DashboardScreen from './Pages/landlord Dashboard/DashboardScreen'
 import MaintenanceScreenLandlord from './Pages/landlord Dashboard/MaintenanceScreenLandlord'
 import AddProperty from './Pages/landlord Dashboard/AddProperty'
+import NewMaintenanceRequest from './Pages/tenant dashboard/NewMaintenanceRequest'
 
 import './App.css'
 
@@ -137,17 +138,21 @@ const navigate = useNavigate()
           <Route path="/tenant-dashboard" element={<TenantDashboard />} > 
             <Route index element={<TenantDashboardScreen />} />
             <Route path='maintenance-tenant-screen' element={< MaintenanceSection />} />
+
+              <Route path='new-maintenance-request-screen' element={<NewMaintenanceRequest />} />  
+           
+            <Route path='new-maintenance-request-screen' element={<NewMaintenanceRequest />} />
             <Route path='payment-tenant-screen' element={<PaymentScreen />} />
             <Route path='lease-tenant-screen' element={<LeaseScreen />} />
             <Route path='settings-tenant-screen' element={<SettingsTenant />} />
-            {/* <Route path='track-rent' element={<TenantDashboard.TrackRentScreen />} />
-            <Route path='messages' element={<TenantDashboard.MessagesScreen />} /> */}
+          
           </Route>
           <Route path="/landlord-dashboard" element={<LandLordDashboard />}>
             <Route index element={<DashboardScreen />} />
             <Route path='properties' element={<PropertiesScreen />} />
             <Route path='maintenance-landlord-screen' element={<MaintenanceScreenLandlord />} />
             <Route path='add-property-landlord-screen' element={<AddProperty />} />
+           
           </Route>
          
         </Routes>

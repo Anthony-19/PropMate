@@ -21,7 +21,7 @@ function HeaderDashboard(props) {
    }
   return (
     <>
-      <div className="dashboard-title-container">
+      {!location.pathname.includes('new-maintenance-request-screen') && <div className="dashboard-title-container">
        {props.show && <img
             onClick={props.handleShow}
           src={HamburgerIcon}
@@ -29,7 +29,9 @@ function HeaderDashboard(props) {
           alt="hamburger-icon"
         />}
         <h5 className="dashboard-title">{text}</h5>
-      </div>
+      </div> }
+
+      
     </>
   );
 }

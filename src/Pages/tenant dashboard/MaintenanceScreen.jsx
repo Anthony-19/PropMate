@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import TrackRentScreen from "./TrackRentScreen";
 
 const MaintenanceSection = () => {
@@ -205,6 +206,7 @@ const MaintenanceSection = () => {
           </div>
         </section>
       </section>
+     <Outlet /> 
     </>
   );
 };

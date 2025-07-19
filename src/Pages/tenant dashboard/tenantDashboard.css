@@ -1775,3 +1775,110 @@ font-weight: 500;
   left: 35px;
   background-color: white;
 }
+
+
+
+/* New Maintenance Request */
+/* .new-maintenance-request-container{
+  background-color: green;
+} */
+  #new-maintenance-request-form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #new-maintenance-request-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  #new-maintenance-request-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  #new-maintenance-request-form input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #174EA6;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+ #new-maintenance-request-form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  #new-maintenance-request-form .upload-wrapper {
+    margin-bottom: 20px;
+  }
+
+  #new-maintenance-request-form .upload-box {
+    border: 1px solid #174EA6;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #new-maintenance-request-form .upload-box img {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+  }
+
+  #new-maintenance-request-form .upload-wrapper input[type="file"] {
+    display: none; /* hide the default input */
+  }
+
+  #new-maintenance-request-form .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  #new-maintenance-request-form .buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #new-maintenance-request-form .cancel-btn {
+    background: #fff;
+    color: #174EA6;
+    border: 1px solid #174EA6;
+  }
+
+ #new-maintenance-request-form .submit-btn {
+    background: #174EA6;
+    color: #fff;
+    border: none;
+  }
+
+  .maintenace-request-title{
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50);
+    font-size: 1rem;
+    background-color: #25D366;
+    padding: 2rem;
+    color: white;
+    border-radius: 1rem;
+    transition: all 3s ease;
+  }
+
+  .maintenace-request-title.active{
+    top: 0px;
+  }

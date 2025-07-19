@@ -1088,3 +1088,24 @@
     .hidden {
       display: none;
     }
+
+
+
+
+     .maintenace-request-title{
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50);
+    font-size: 1rem;
+    background-color: #25D366;
+    padding: 2rem;
+    color: white;
+    border-radius: 1rem;
+    transition: all 3s ease;
+    z-index: 999;
+  }
+
+  .maintenace-request-title.active{
+    top: 0px;
+  }

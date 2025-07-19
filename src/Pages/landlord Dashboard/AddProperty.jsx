@@ -51,57 +51,68 @@ function AddProperty() {
 
 
   const [loading, setLoading] = useState(false)
+   const [showTitle, setShowTitle] = useState(false);
   const handleSubmit = async(e) => {
     e.preventDefault();
-    try{
 
-       const data = new FormData();
+    setShowTitle(true);
+        setTimeout(() => setShowTitle(false) , 7000);
+        setTimeout(() => navigate('/landlord-dashboard') , 8000);
+  //   navigate('/landlord-dashboard')    
+  //   try{
 
-    // Append text fields
-    data.append('title', formData.title);
-    data.append('description', formData.description);
-    data.append('address', formData.address);
-    data.append('lease_duration', formData.lease_duration);
-    data.append('rent', formData.rent);
-    data.append('type', formData.type);
+  //     const token = localStorage.getItem('token');
+  //      const data = new FormData();
 
-    // Append utility bill file
-    if (formData.utility_bill) {
-      data.append('utility_bill', formData.utility_bill);
-    }
+  //   // Append text fields
+  //   data.append('title', formData.title);
+  //   data.append('description', formData.description);
+  //   data.append('address', formData.address);
+  //   data.append('lease_duration', formData.lease_duration);
+  //   data.append('rent', formData.rent);
+  //   data.append('type', formData.type);
 
-    // Append property photos
-    formData.photos.forEach((file, index) => {
-      data.append('photos', file); // backend should accept multiple with same key name
-    });
+  //   // Append utility bill file
+  //   if (formData.utility_bill) {
+  //     data.append('utility_bill', formData.utility_bill);
+  //   }
 
-    const response = await fetch('https://pms-bd.onrender.com/api/properties', {
-      method: 'POST',
-      body: data,
-    });
+  //   // Append property photos
+  //   formData.photos.forEach((file, index) => {
+  //     data.append('photos', file); // backend should accept multiple with same key name
+  //   });
 
-      const result = await response.json();
-        if(response.ok) {
-          console.log('Registration successful:',);
-          navigate('/landlord-dashboard')
-          setOtpSent(true);
+  //   const response = await fetch('https://pms-bd.onrender.com/api/properties', {
+  //     method: 'POST',
+  //      headers: {
+  //   // 'Content-Type': 'application/json',
+  //   'Authorization': `Bearer ${token}`, 
+  // }, 
+  //     body: data,
+  //   });
+
+  //     const result = await response.json();
+  //       if(response.ok) {
+  //         console.log('Registration successful:',);
+  //         navigate('/landlord-dashboard')
+
           
          
-        }
-        else{
-          throw new Error(result.message || 'Registration failed');
-        }
+  //       }
+  //       else{
+  //         throw new Error(result.message || 'Registration failed');
+  //       }
        
-    }
+  //   }
     
-    catch (error) {
-      console.error('Error submitting form:', error);
-        // setErrors({ submit: error.message || 'User Already Exist' });
-      // setErrors({ submit: 'User Already Exist' });
-      // setErrors({ submit: error });
-    } finally{
-      setLoading(false);
-    }
+  //   catch (error) {
+  //     console.error('Error submitting form:', error);
+  //       // setErrors({ submit: error.message || 'User Already Exist' });
+  //     // setErrors({ submit: 'User Already Exist' });
+  //     // setErrors({ submit: error });
+  //   } finally{
+  //     setLoading(false);
+  //   }
   };
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -110,6 +121,8 @@ function AddProperty() {
   // };
 
   return (
+    <>  
+    <h1 className={`maintenace-request-title ${showTitle ? 'active' : ''}`}>Properties added successfully</h1>
     <form id="property-details-container" onSubmit={handleSubmit}>
       <div className="property-details-item">
         <label htmlFor="property-name">Property Name:</label>
@@ -280,6 +293,7 @@ function AddProperty() {
         </button>
       </div>
     </form>
+    </>
   );
 }
 

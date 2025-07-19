@@ -1,8 +1,15 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 import MessagesIcon from '../../assets/images/messages-badge-icon.svg'
 import NotificationIcon from '../../assets/images/notification-icon.svg'
 function TrackRentScreen() {
+
+  const navigate = useNavigate()
+
+
+  const handleClick = () => {
+    navigate('/tenant-dashboard/new-maintenance-request-screen')
+  }
   const userName = localStorage.getItem('userName');
   // const role = localStorage.getItem('role');
   const location = useLocation();
@@ -32,10 +39,13 @@ function TrackRentScreen() {
                 <p className="track-rent-text">{text}</p>
               </div>
               <div className='track-rent-left'>
-               {!location.pathname.includes('payment-tenant-screen') || !location.pathname.includes('lease-tenant-screen') || !location.pathname.includes('settings-tenant-screen')  
-               && <button className="btn-request" id="openRequestModal">
+                {location.pathname.includes('maintenance-tenant-screen') && <button className="btn-request" id="openRequestModal" onClick={handleClick}>
                   <i className="fas fa-plus"></i> New Maintenance Request
                 </button>}
+               {/* {!location.pathname.includes('payment-tenant-screen') || !location.pathname.includes('lease-tenant-screen') || !location.pathname.includes('settings-tenant-screen')  
+               && <button className="btn-request" id="openRequestModal">
+                  <i className="fas fa-plus"></i> New Maintenance Request
+                </button>} */}
                 <img src={MessagesIcon} alt="message-icon" className='message-icon' />
                 <img src={NotificationIcon} alt="notification-icon" className='notification-icon' />
               </div>
